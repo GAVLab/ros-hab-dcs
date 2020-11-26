@@ -1,0 +1,8 @@
+prefix=/home/gavlab/ros-hab-dcs/catkin_ws/install
+
+Name: bb_altimeter
+Description: Description of bb_altimeter
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy std_msgs

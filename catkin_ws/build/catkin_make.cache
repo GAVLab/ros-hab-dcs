@@ -1,0 +1,2 @@
+bb_altimeter:ros-imu-bno055/imu_bno055
+-DCATKIN_DEVEL_PREFIX=/home/gavlab/ros-hab-dcs/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/gavlab/ros-hab-dcs/catkin_ws/install -G Unix Makefiles
