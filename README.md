@@ -9,7 +9,11 @@ Robot Operating System (ROS) High Altitude Balloon (HAB) Data Collection System 
 This is a system to collect a high altitude balloon dataset utilizing ROS for aerial navigation algorithmic development.  The datasets contain downward facing visual imagery, side-facing imagery, IMU, GPS, internal and external barometric pressure, and internal and external temperature.  The system is designed to run Ubuntu Mate 20.04LTS with ROS Noetic Ninjemys on a Raspberry Pi 4 2GB and an Arduino Sense 33BLE.
 
 ## Installation Instructions
-
+### Clone repository and get submodules
+```
+git clone https://github.com/GAVLab/ros-hab-dcs
+git submodule update --init --recursive
+```
 ### Set Up the Pi (Basics)
 
 * Download and flash microSD with Ubuntu Mate 20.04 Raspberry Pi 32-bit (ubuntu-mate-20.04.1-desktop-armhf%2Braspi.img.xz): https://releases.ubuntu-mate.org/focal/armhf/
@@ -36,7 +40,7 @@ This is a system to collect a high altitude balloon dataset utilizing ROS for ae
   ```
 * Add `i2c-devl` to boot with `sudo nano /etc/modules-load.d/modules.conf`
 * Install wiringpi `sudo apt install wiringpi`
-* Connect i2c devices to Sparkfun Qwiic hat and run `i2cdetect-y` to identify channels
+* Connect i2c devices to Sparkfun Qwiic hat and run `i2cdetect -y 1` to identify channels
 * Install Circuit Python: https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
 * Install driver for BNO055 IMU: `sudo pip3 install adafruit-circuitpython-bno055`.
 * Install driver for MPL3115A2 Baro/Temp/Alt Sensor: `sudo pip3 install adafruit-circuitpython-mpl3115a2`.
