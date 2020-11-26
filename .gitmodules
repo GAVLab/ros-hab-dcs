@@ -1,3 +1,6 @@
 [submodule "catkin_ws/arduino_test_scripts/SparkFun_Trackuino"]
 	path = catkin_ws/arduino_test_scripts/SparkFun_Trackuino
 	url = https://github.com/sparkfun/SparkFun_Trackuino
+[submodule "catkin_ws/src/ros-imu-bno055"]
+	path = catkin_ws/src/ros-imu-bno055
+	url = https://github.com/RoboticArts/ros_imu_bno055
