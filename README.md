@@ -10,12 +10,24 @@ This is a system to collect a high altitude balloon dataset utilizing ROS for ae
 
 ## Installation Instructions
 
-### Setting Up the Pi (Basics)
+### Set Up the Pi (Basics)
 
 * Download and flash microSD with Ubuntu Mate 20.04 Raspberry Pi 32-bit (ubuntu-mate-20.04.1-desktop-armhf%2Braspi.img.xz): https://releases.ubuntu-mate.org/focal/armhf/
 * Connect to AU_WiFi (if on Auburn University's network): http://www.eng.auburn.edu/admin/ens/helpdesk/on-campus/wireless.html
 * Install ROS Noetic: http://wiki.ros.org/noetic/Installation/Ubuntu
 
+### Set Up VNC on the Pi
+
+* Install ifconfig: `sudo apt-get install net-tools`
+* Install x11vnc: `sudo apt-get install x11vnc`
+* Run `ifconfig` to identify ip address.
+* Start the VNC
+  ``` 
+    startx &
+    x11vnc &
+  ```
+* Login to VNC viewer with IP address
+  
 ### Setting Up i2c on Pi
 * Enable i2c
   ```
@@ -30,11 +42,21 @@ This is a system to collect a high altitude balloon dataset utilizing ROS for ae
 * Install driver for MPL3115A2 Baro/Temp/Alt Sensor: `sudo pip3 install adafruit-circuitpython-mpl3115a2`.
   
 ### Setting Up the Arduino
-
-* Use this guide: https://www.arduino.cc/en/Guide/NANO33BLESense
-* In Tools > Library Manager install the following
+* Download Arduino IDE onto Raspberry Pi (Linux ARM 32-bits): https://www.arduino.cc/en/software
+* Install IDE
+  ```
+  cd Downloads/
+  tar -xf arduino-1.8.3-linuxarm.tar.xz
+  sudo mv arduino-1.8.3 /opt
+  sudo /opt/arduino-1.8.3/install.sh
+  ```
+* In `Tools > Board > Boards Manager...`, install Arduino nRF528x Boards (Mbed OS).  This may take a few minutes.
+* Select `Tools > Board > Arduino Mbed OS Boards > Arduino Nano 33 BLE`
+* Select the proper port and test the Arduino with `File > Examples > Basics > Blink`
+  * Example: `/dev/ttyACM0`
+* In `Tools > Manage Libraries...` install the following
   * ArduinoBLE
-  * Nano33BLESensor
+  * Nano33BLESensor (Install all required libraries)
 
 ## Electrical Hardware
 
