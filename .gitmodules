@@ -1,0 +1,3 @@
+[submodule "catkin_ws/arduino_test_scripts/SparkFun_Trackuino"]
+	path = catkin_ws/arduino_test_scripts/SparkFun_Trackuino
+	url = https://github.com/sparkfun/SparkFun_Trackuino
