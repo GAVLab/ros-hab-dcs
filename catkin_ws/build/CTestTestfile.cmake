@@ -7,3 +7,4 @@
 subdirs("gtest")
 subdirs("bb_altimeter")
 subdirs("ros-imu-bno055/imu_bno055")
+subdirs("ros_mpl3115a2")

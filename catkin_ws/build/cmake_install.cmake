@@ -133,6 +133,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/gavlab/ros-hab-dcs/catkin_ws/build/gtest/cmake_install.cmake")
   include("/home/gavlab/ros-hab-dcs/catkin_ws/build/bb_altimeter/cmake_install.cmake")
   include("/home/gavlab/ros-hab-dcs/catkin_ws/build/ros-imu-bno055/imu_bno055/cmake_install.cmake")
+  include("/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_mpl3115a2/cmake_install.cmake")
 
 endif()
 

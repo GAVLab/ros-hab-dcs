@@ -56,6 +56,7 @@ CMAKE_BINARY_DIR = /home/gavlab/ros-hab-dcs/catkin_ws/build
 all: gtest/all
 all: bb_altimeter/all
 all: ros-imu-bno055/imu_bno055/all
+all: ros_mpl3115a2/all
 
 .PHONY : all
 
@@ -63,6 +64,7 @@ all: ros-imu-bno055/imu_bno055/all
 preinstall: gtest/preinstall
 preinstall: bb_altimeter/preinstall
 preinstall: ros-imu-bno055/imu_bno055/preinstall
+preinstall: ros_mpl3115a2/preinstall
 
 .PHONY : preinstall
 
@@ -75,6 +77,7 @@ clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
 clean: bb_altimeter/clean
 clean: ros-imu-bno055/imu_bno055/clean
+clean: ros_mpl3115a2/clean
 
 .PHONY : clean
 
@@ -199,6 +202,24 @@ ros-imu-bno055/imu_bno055/clean: ros-imu-bno055/imu_bno055/CMakeFiles/diagnostic
 ros-imu-bno055/imu_bno055/clean: ros-imu-bno055/imu_bno055/CMakeFiles/bno055_i2c_node.dir/clean
 
 .PHONY : ros-imu-bno055/imu_bno055/clean
+
+#=============================================================================
+# Directory level rules for directory ros_mpl3115a2
+
+# Recursive "all" directory target.
+ros_mpl3115a2/all:
+
+.PHONY : ros_mpl3115a2/all
+
+# Recursive "preinstall" directory target.
+ros_mpl3115a2/preinstall:
+
+.PHONY : ros_mpl3115a2/preinstall
+
+# Recursive "clean" directory target.
+ros_mpl3115a2/clean:
+
+.PHONY : ros_mpl3115a2/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir

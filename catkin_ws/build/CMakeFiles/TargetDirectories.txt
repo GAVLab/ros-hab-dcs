@@ -80,3 +80,10 @@
 /home/gavlab/ros-hab-dcs/catkin_ws/build/ros-imu-bno055/imu_bno055/CMakeFiles/bno055_i2c_node.dir
 /home/gavlab/ros-hab-dcs/catkin_ws/build/ros-imu-bno055/imu_bno055/CMakeFiles/test.dir
 /home/gavlab/ros-hab-dcs/catkin_ws/build/ros-imu-bno055/imu_bno055/CMakeFiles/edit_cache.dir
+/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_mpl3115a2/CMakeFiles/install/strip.dir
+/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_mpl3115a2/CMakeFiles/list_install_components.dir
+/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_mpl3115a2/CMakeFiles/install/local.dir
+/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_mpl3115a2/CMakeFiles/rebuild_cache.dir
+/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_mpl3115a2/CMakeFiles/edit_cache.dir
+/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_mpl3115a2/CMakeFiles/install.dir
+/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_mpl3115a2/CMakeFiles/test.dir
