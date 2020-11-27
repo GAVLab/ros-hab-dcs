@@ -1,7 +1,4 @@
 <launch>
-    <node ns="altimeter" name="altimeter_node" pkg="mpl2115a2" type="altimeter" respawn="true" respawn_delay="2">
-        <param name="device" type="string" value="/dev/i2c-1"/>
-        <param name="address" type="int" value="96"/> <!-- 0x60 == 96 is the default for mpl3115A2 -->
-        <param name="frame_id" type="string" value="altimeter"/>
+    <node name="ros_mpl3115a2" pkg="ros_mpl3115a2" type="talker.py" respawn="true" respawn_delay="2">
     </node>
 </launch>

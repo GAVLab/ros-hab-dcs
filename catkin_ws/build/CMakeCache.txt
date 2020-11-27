@@ -450,10 +450,16 @@ imu_bno055_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/ros-imu-bn
 imu_bno055_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/ros-imu-bno055/imu_bno055
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/noetic/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/noetic/lib/librostime.so
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
+
+//Value Computed by CMake
+raspi_cpu_temp_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/raspi_cpu_temp
+
+//Value Computed by CMake
+raspi_cpu_temp_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/raspi_cpu_temp
 
 //Value Computed by CMake
 ros_mpl3115a2_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_mpl3115a2

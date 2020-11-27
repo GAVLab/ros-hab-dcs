@@ -62,6 +62,12 @@ git submodule update --init --recursive
   * ArduinoBLE
   * Nano33BLESensor (Install all required libraries)
 
+## Running system
+` cd ~/ros-hab-dcs
+  source devel/setup.bash
+  catkin_make
+  roslaunch ~/ros-hab-dcs/launches/full_flight.launch`
+
 ## Electrical Hardware
 
 **System Diagram**

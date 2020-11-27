@@ -1,0 +1,4 @@
+<launch>
+    <node name="raspi_cpu_temp" pkg="raspi_cpu_temp" type="raspi_cpu_temp_node.py" respawn="true" respawn_delay="2">
+    </node>
+</launch>
