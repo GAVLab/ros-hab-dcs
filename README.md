@@ -32,7 +32,8 @@ git submodule update --init --recursive
   ```
 * Login to VNC viewer with IP address
   
-### Setting Up i2c on Pi
+### Set Up i2c on Pi
+
 * Enable i2c
   ```
   sudo apt-get install i2c-tools
@@ -44,8 +45,23 @@ git submodule update --init --recursive
 * Install Circuit Python: https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
 * Install driver for BNO055 IMU: `sudo pip3 install adafruit-circuitpython-bno055`.
 * Install driver for MPL3115A2 Baro/Temp/Alt Sensor: `sudo pip3 install adafruit-circuitpython-mpl3115a2`.
-  
+
+### Set Up Cameras
+
+* ROS Libraries
+```
+sudo apt-get install ros-noetic-camera-info-manager
+sudo apt-get install ros-noetic-image-view
+```
+* Enable CSI Camera
+```sudo modprobe bcm2835-v4l2```
+* Check video ports
+```v4l2-ctl --list-devices``` 
+* View Results once Running Node
+```rqt_image_view```
+
 ### Setting Up the Arduino
+
 * Download Arduino IDE onto Raspberry Pi (Linux ARM 32-bits): https://www.arduino.cc/en/software
 * Install IDE
   ```
@@ -63,10 +79,13 @@ git submodule update --init --recursive
   * Nano33BLESensor (Install all required libraries)
 
 ## Running system
-` cd ~/ros-hab-dcs
+
+  ```
+  cd ~/ros-hab-dcs/catkin_ws
   source devel/setup.bash
   catkin_make
   roslaunch ~/ros-hab-dcs/launches/full_flight.launch`
+  ```
 
 ## Electrical Hardware
 
