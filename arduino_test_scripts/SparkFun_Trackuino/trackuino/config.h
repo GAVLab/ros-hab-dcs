@@ -18,7 +18,6 @@
 #ifndef __CONFIG_H__
 #define __CONFIG_H__
 
-
 // --------------------------------------------------------------------------
 // THIS IS THE TRACKUINO FIRMWARE CONFIGURATION FILE. YOUR CALLSIGN AND
 // OTHER SETTINGS GO HERE.
@@ -214,7 +213,7 @@
 // 3. When flashing the firmware, disconnect the GPS from the RX pin or you
 //    will get errors.
 
-// #define DEBUG_GPS    // GPS sentence dump and checksum validation
+ #define DEBUG_GPS    // GPS sentence dump and checksum validation
  #define DEBUG_AX25   // AX.25 frame dump
  //#define DEBUG_MODEM  // Modem ISR overrun and profiling
 //#define DEBUG_AFSK   // AFSK (modulation) output

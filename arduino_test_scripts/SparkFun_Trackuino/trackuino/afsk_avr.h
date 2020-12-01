@@ -22,6 +22,7 @@
 
 #include <stdint.h>
 #include <avr/pgmspace.h>
+
 #include "config.h"
 
 #define AFSK_ISR ISR(TIMER2_OVF_vect)
