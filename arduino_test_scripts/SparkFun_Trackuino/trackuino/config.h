@@ -49,13 +49,13 @@
 // (read more about digipeating paths here: http://wa8lmf.net/DigiPaths/ )
 // The recommended digi path for a balloon is WIDE2-1 or pathless. The default
 // is pathless. Uncomment the following two lines for WIDE2-1 path:
-#define DIGI_PATH1      "WIDE2"
-#define DIGI_PATH1_TTL  1
+//#define DIGI_PATH1      "WIDE2"
+//#define DIGI_PATH1_TTL  1
 
 // APRS comment: this goes in the comment portion of the APRS message. You
 // might want to keep this short. The longer the packet, the more vulnerable
 // it is to noise. 
-#define APRS_COMMENT    "Trackuino reminder: replace callsign with your own"
+#define APRS_COMMENT    "AU GAVLAB: HAB (radio test)"
 
 
 // --------------------------------------------------------------------------
@@ -146,7 +146,7 @@
 
 // Units for temperature sensors (Added by: Kyle Crockett)
 // 1 = Celsius, 2 = Kelvin, 3 = Fahrenheit
-#define TEMP_UNIT 1
+#define TEMP_UNIT 3
 
 // Calibration value in the units selected. Use integer only.
 #define CALIBRATION_VAL 0
@@ -213,7 +213,7 @@
 // 3. When flashing the firmware, disconnect the GPS from the RX pin or you
 //    will get errors.
 
- #define DEBUG_GPS    // GPS sentence dump and checksum validation
+ //#define DEBUG_GPS    // GPS sentence dump and checksum validation
  #define DEBUG_AX25   // AX.25 frame dump
  //#define DEBUG_MODEM  // Modem ISR overrun and profiling
 //#define DEBUG_AFSK   // AFSK (modulation) output
