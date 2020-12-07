@@ -45,6 +45,7 @@ git submodule update --init --recursive
 * Install Circuit Python: https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
 * Install driver for BNO055 IMU: `sudo pip3 install adafruit-circuitpython-bno055`.
 * Install driver for MPL3115A2 Baro/Temp/Alt Sensor: `sudo pip3 install adafruit-circuitpython-mpl3115a2`.
+* Install driver for ICM20948 IMU: 'sudo pip3 install sparkfun-qwiic-icm20948`.
 
 ### Set Up Cameras
 

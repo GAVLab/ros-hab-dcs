@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/gavlab/ros-hab-dcs/catkin_ws/install/setup.sh
