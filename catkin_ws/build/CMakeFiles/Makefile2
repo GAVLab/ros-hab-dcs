@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/gavlab/ros-hab-dcs/catkin_ws/build
 
 # The main recursive "all" target.
 all: gtest/all
+all: ros_icm20948/all
 all: rosserial/rosserial/all
 all: rosserial/rosserial_arduino/all
 all: rosserial/rosserial_chibios/all
@@ -78,6 +79,7 @@ all: usb_cam/all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
+preinstall: ros_icm20948/preinstall
 preinstall: rosserial/rosserial/preinstall
 preinstall: rosserial/rosserial_arduino/preinstall
 preinstall: rosserial/rosserial_chibios/preinstall
@@ -107,6 +109,7 @@ clean: CMakeFiles/run_tests.dir/clean
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
+clean: ros_icm20948/clean
 clean: rosserial/rosserial/clean
 clean: rosserial/rosserial_arduino/clean
 clean: rosserial/rosserial_chibios/clean
@@ -253,6 +256,24 @@ ros-imu-bno055/imu_bno055/clean: ros-imu-bno055/imu_bno055/CMakeFiles/diagnostic
 .PHONY : ros-imu-bno055/imu_bno055/clean
 
 #=============================================================================
+# Directory level rules for directory ros_icm20948
+
+# Recursive "all" directory target.
+ros_icm20948/all:
+
+.PHONY : ros_icm20948/all
+
+# Recursive "preinstall" directory target.
+ros_icm20948/preinstall:
+
+.PHONY : ros_icm20948/preinstall
+
+# Recursive "clean" directory target.
+ros_icm20948/clean: ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : ros_icm20948/clean
+
+#=============================================================================
 # Directory level rules for directory ros_mpl3115a2
 
 # Recursive "all" directory target.
@@ -284,7 +305,7 @@ rosserial/rosserial/preinstall:
 .PHONY : rosserial/rosserial/preinstall
 
 # Recursive "clean" directory target.
-rosserial/rosserial/clean: rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/clean
+rosserial/rosserial/clean:
 
 .PHONY : rosserial/rosserial/clean
 
@@ -896,31 +917,31 @@ gtest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir
+# Target rules for target ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir
 
 # All Build rule for target.
-rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build.make rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build.make rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build
+ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/build.make ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/build.make ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gavlab/ros-hab-dcs/catkin_ws/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/all
+.PHONY : ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/all
 
 # Build rule for subdir invocation for target.
-rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavlab/ros-hab-dcs/catkin_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavlab/ros-hab-dcs/catkin_ws/build/CMakeFiles 0
-.PHONY : rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
-_catkin_empty_exported_target: rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/rule
+_catkin_empty_exported_target: ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 .PHONY : _catkin_empty_exported_target
 
 # clean rule for target.
-rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/build.make rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : rosserial/rosserial/CMakeFiles/_catkin_empty_exported_target.dir/clean
+ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/build.make ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 #=============================================================================
 # Target rules for target rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir

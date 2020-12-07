@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/gavlab/ros-hab-dcs/catkin_ws/build/CMakeFiles /home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial/CMakeFiles/progress.marks
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial/all
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/gavlab/ros-hab-dcs/catkin_ws/build/CMakeFiles /home/gavlab/ros-hab-dcs/catkin_ws/build/ros_icm20948/CMakeFiles/progress.marks
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_icm20948/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavlab/ros-hab-dcs/catkin_ws/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial/clean
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_icm20948/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,18 +154,33 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial/preinstall
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_icm20948/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 rosserial/rosserial/preinstall
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_icm20948/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
 	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/build.make ros_icm20948/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
 
 # Help Target
 help:
@@ -180,6 +195,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... test"
+	@echo "... _catkin_empty_exported_target"
 .PHONY : help
 
 

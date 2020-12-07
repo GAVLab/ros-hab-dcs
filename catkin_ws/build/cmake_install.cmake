@@ -131,6 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/gavlab/ros-hab-dcs/catkin_ws/build/gtest/cmake_install.cmake")
+  include("/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_icm20948/cmake_install.cmake")
   include("/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial/cmake_install.cmake")
   include("/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_arduino/cmake_install.cmake")
   include("/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_chibios/cmake_install.cmake")

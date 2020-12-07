@@ -7,6 +7,10 @@
 /home/gavlab/ros-hab-dcs/catkin_ws/install/setup.zsh
 /home/gavlab/ros-hab-dcs/catkin_ws/install/local_setup.zsh
 /home/gavlab/ros-hab-dcs/catkin_ws/install/.rosinstall
+/home/gavlab/ros-hab-dcs/catkin_ws/install/lib/pkgconfig/ros_icm20948.pc
+/home/gavlab/ros-hab-dcs/catkin_ws/install/share/ros_icm20948/cmake/ros_icm20948Config.cmake
+/home/gavlab/ros-hab-dcs/catkin_ws/install/share/ros_icm20948/cmake/ros_icm20948Config-version.cmake
+/home/gavlab/ros-hab-dcs/catkin_ws/install/share/ros_icm20948/package.xml
 /home/gavlab/ros-hab-dcs/catkin_ws/install/share/rosserial/package.xml
 /home/gavlab/ros-hab-dcs/catkin_ws/install/share/rosserial_arduino/msg/Adc.msg
 /home/gavlab/ros-hab-dcs/catkin_ws/install/share/rosserial_arduino/srv/Test.srv

@@ -13,3 +13,6 @@
 [submodule "catkin_ws/src/libuvc_ros"]
 	path = catkin_ws/src/libuvc_ros
 	url = https://github.com/ros-drivers/libuvc_ros.git
+[submodule "catkin_ws/src/ros_icm20948"]
+	path = catkin_ws/src/ros_icm20948
+	url = https://github.com/GAVLab/ros_icm20948
