@@ -19,3 +19,6 @@
 [submodule "catkin_ws/src/raspi_cpu_temp"]
 	path = catkin_ws/src/raspi_cpu_temp
 	url = https://github.com/Roboterbastler/raspi_cpu_temp
+[submodule "catkin_ws/src/rosserial"]
+	path = catkin_ws/src/rosserial
+	url = https://github.com/ros-drivers/rosserial
