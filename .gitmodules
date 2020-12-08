@@ -22,3 +22,6 @@
 [submodule "catkin_ws/src/rosserial"]
 	path = catkin_ws/src/rosserial
 	url = https://github.com/ros-drivers/rosserial
+[submodule "catkin_ws/src/image_pipeline"]
+	path = catkin_ws/src/image_pipeline
+	url = https://github.com/ros-perception/image_pipeline.git
