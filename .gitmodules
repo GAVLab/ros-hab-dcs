@@ -16,3 +16,6 @@
 [submodule "catkin_ws/src/ros_icm20948"]
 	path = catkin_ws/src/ros_icm20948
 	url = https://github.com/GAVLab/ros_icm20948
+[submodule "catkin_ws/src/raspi_cpu_temp"]
+	path = catkin_ws/src/raspi_cpu_temp
+	url = https://github.com/Roboterbastler/raspi_cpu_temp
