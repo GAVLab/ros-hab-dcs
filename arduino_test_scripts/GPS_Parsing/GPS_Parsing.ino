@@ -18,7 +18,7 @@
 // Connect the GPS TX (transmit) pin to Digital 8
 // Connect the GPS RX (receive) pin to Digital 7
 
-Adafruit_GPS GPS(&Serial1);
+Adafruit_GPS GPS(&Serial);
 
 // Set GPSECHO to 'false' to turn off echoing the GPS data to the Serial console
 // Set to 'true' if you want to debug and listen to the raw GPS sentences
@@ -53,7 +53,7 @@ void setup()
 
   delay(1000);
   // Ask for firmware version
-  Serial1.println(PMTK_Q_RELEASE);
+  Serial.println(PMTK_Q_RELEASE);
 }
 
 uint32_t timer = millis();

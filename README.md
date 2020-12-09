@@ -63,8 +63,10 @@ sudo apt-get install ros-noetic-image-view
 * Setup library for camera calibration
 ```sudo apt-get install ros-noetic-image-geometry```
 * Perform camera calibration. Move checkerboard paper until all bars are green and press "Calibrate" wait until results are printed to terminal (may take up to 10 minutes).  Press save (may take up to 5 minutes).  Press commit.
-```rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.108 image:=/side_cam/image_raw camera:=/side_cam```
-```rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.108 image:=/down_cam/image_raw camera:=/down_cam```
+```
+roslaunch ~/ros-hab-dcs/launches/cameras.launch
+rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/side_cam/image_raw camera:=/side_cam
+rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/down_cam/image_raw camera:=/down_cam```
 
 ### Setting Up the Arduino
 
