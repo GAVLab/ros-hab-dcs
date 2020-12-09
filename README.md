@@ -53,6 +53,8 @@ git submodule update --init --recursive
 ```
 sudo apt-get install ros-noetic-camera-info-manager
 sudo apt-get install ros-noetic-image-view
+sudo apt-get install ros-noetic-compressed-image-transport
+sudo apt-get install ros-noetic-dynamic-reconfigure
 ```
 * Enable CSI Camera
 ```sudo modprobe bcm2835-v4l2```
