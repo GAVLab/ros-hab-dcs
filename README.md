@@ -12,7 +12,7 @@ This is a system to collect a high altitude balloon dataset utilizing ROS for ae
 
 ### Clone repository and get submodules
 
-```
+```bash
 git clone https://github.com/GAVLab/ros-hab-dcs
 git submodule update --init --recursive
 ```
@@ -30,7 +30,7 @@ git submodule update --init --recursive
 * Run `ifconfig` to identify ip address.
 * Start the VNC
 
-  ``` 
+  ```bash
     startx &
     x11vnc &
   ```
@@ -41,7 +41,7 @@ git submodule update --init --recursive
 
 * Enable i2c
   
-  ```
+  ```bash
   sudo apt-get install i2c-tools
   i2cdetect -l
   ```
@@ -57,12 +57,14 @@ git submodule update --init --recursive
 ### Set Up Cameras
 
 * ROS Libraries
-```
+
+```bash
 sudo apt-get install ros-noetic-camera-info-manager
 sudo apt-get install ros-noetic-image-view
 sudo apt-get install ros-noetic-compressed-image-transport
 sudo apt-get install ros-noetic-dynamic-reconfigure
 ```
+
 * Enable CSI Camera
   ```sudo modprobe bcm2835-v4l2```
 * Check video ports
@@ -72,21 +74,25 @@ sudo apt-get install ros-noetic-dynamic-reconfigure
 * Setup library for camera calibration
 ```sudo apt-get install ros-noetic-image-geometry```
 * Perform camera calibration. Move checkerboard paper until all bars are green and press "Calibrate" wait until results are printed to terminal (may take up to 10 minutes).  Press save (may take up to 5 minutes).  Press commit.
-```
+
+```bash
 roslaunch ~/ros-hab-dcs/launches/cameras.launch
 rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/side_cam/image_raw camera:=/side_cam
-rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/down_cam/image_raw camera:=/down_cam```
+rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/down_cam/image_raw camera:=/down_cam
+```
 
 ### Setting Up the Arduino
 
 * Download Arduino IDE onto Raspberry Pi (Linux ARM 32-bits): https://www.arduino.cc/en/software
 * Install IDE
-  ```
+
+  ```bash
   cd Downloads/
   tar -xf arduino-1.8.3-linuxarm.tar.xz
   sudo mv arduino-1.8.3 /opt
   sudo /opt/arduino-1.8.3/install.sh
   ```
+
 * In `Tools > Board > Boards Manager...`, install Arduino nRF528x Boards (Mbed OS).  This may take a few minutes.
 * Select `Tools > Board > Arduino Mbed OS Boards > Arduino Nano 33 BLE`
 * Select the proper port and test the Arduino with `File > Examples > Basics > Blink`
@@ -97,21 +103,21 @@ rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/
 
 ## Running system
 
-  ```
-  cd ~/ros-hab-dcs/catkin_ws
-  source devel/setup.bash
-  catkin_make
-  roslaunch ~/ros-hab-dcs/launches/full_flight.launch`
-  ```
+```bash
+cd ~/ros-hab-dcs/catkin_ws
+source devel/setup.bash
+catkin_make
+roslaunch ~/ros-hab-dcs/launches/full_flight.launch`
+```
 
 ## Electrical Hardware
 
-**System Diagram**
+### System Diagram
 
 <img src="diagrams/system_diagram.png"
      style="width:500px;" />
 
-**Arduino Protoboard Schematic**
+### Arduino Protoboard Schematic
 
 <img src="diagrams/arduino_pinout_diagram.png"
      style="width:500px;" />
