@@ -3,9 +3,6 @@
  * Prints "hello world!"
  */
 
-#define USE_USBCON
-#include <adafruit_usbd_cdc.h>
-#define Serial_Adafruit_USBD_CDC
 #include <ros.h>
 #include <std_msgs/String.h>
 

@@ -57,19 +57,25 @@ git submodule update --init --recursive
 ### Set Up Cameras
 
 * ROS Libraries
-
-  ```
-  sudo apt-get install ros-noetic-camera-info-manager
-  sudo apt-get install ros-noetic-image-view
-  sudo apt-get install ros-noetic-compressed-image-transport
-  ```
-
+```
+sudo apt-get install ros-noetic-camera-info-manager
+sudo apt-get install ros-noetic-image-view
+sudo apt-get install ros-noetic-compressed-image-transport
+sudo apt-get install ros-noetic-dynamic-reconfigure
+```
 * Enable CSI Camera
   ```sudo modprobe bcm2835-v4l2```
 * Check video ports
   ```v4l2-ctl --list-devices```
 * View Results once Running Node
-  ```rqt_image_view```
+```rqt_image_view```
+* Setup library for camera calibration
+```sudo apt-get install ros-noetic-image-geometry```
+* Perform camera calibration. Move checkerboard paper until all bars are green and press "Calibrate" wait until results are printed to terminal (may take up to 10 minutes).  Press save (may take up to 5 minutes).  Press commit.
+```
+roslaunch ~/ros-hab-dcs/launches/cameras.launch
+rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/side_cam/image_raw camera:=/side_cam
+rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/down_cam/image_raw camera:=/down_cam```
 
 ### Setting Up the Arduino
 
