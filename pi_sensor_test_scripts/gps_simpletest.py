@@ -15,7 +15,7 @@ import adafruit_gps
 
 # for a computer, use the pyserial library for uart access
 import serial
-uart = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=10)
+uart = serial.Serial("/dev/ttyUSB1", baudrate=9600, timeout=10)
 
 # If using I2C, we'll create an I2C interface to talk to using default pins
 # i2c = board.I2C()

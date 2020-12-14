@@ -78,32 +78,6 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/include/image_proc/advertisement_checker.h
-ros/ros.h
--
-
-/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/include/image_proc/processor.h
-opencv2/core/core.hpp
--
-image_geometry/pinhole_camera_model.h
--
-sensor_msgs/Image.h
--
-
-/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/src/libimage_proc/advertisement_checker.cpp
-image_proc/advertisement_checker.h
-/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/src/libimage_proc/image_proc/advertisement_checker.h
-boost/foreach.hpp
--
-
-/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/src/libimage_proc/processor.cpp
-image_proc/processor.h
-/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/src/libimage_proc/image_proc/processor.h
-sensor_msgs/image_encodings.h
--
-ros/console.h
--
-
 /home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/src/nodelets/crop_decimate.cpp
 boost/version.hpp
 -
@@ -124,18 +98,6 @@ cv_bridge/cv_bridge.h
 image_proc/CropDecimateConfig.h
 -
 opencv2/imgproc/imgproc.hpp
--
-pluginlib/class_list_macros.h
--
-
-/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/src/nodelets/crop_non_zero.cpp
-nodelet/nodelet.h
--
-image_transport/image_transport.h
--
-boost/thread.hpp
--
-cv_bridge/cv_bridge.h
 -
 pluginlib/class_list_macros.h
 -
@@ -167,10 +129,6 @@ cv_bridge/cv_bridge.h
 -
 pluginlib/class_list_macros.h
 -
-
-/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/src/nodelets/edge_aware.cpp
-edge_aware.h
-/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/src/nodelets/edge_aware.h
 
 /home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/src/nodelets/edge_aware.h
 opencv2/core/core.hpp
@@ -550,10 +508,6 @@ ros/node_handle.h
 dynamic_reconfigure/ConfigDescription.h
 -
 dynamic_reconfigure/Reconfigure.h
--
-
-/opt/ros/noetic/include/image_geometry/exports.h
-ros/macros.h
 -
 
 /opt/ros/noetic/include/image_geometry/pinhole_camera_model.h

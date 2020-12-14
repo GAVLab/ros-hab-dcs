@@ -53,6 +53,13 @@ git submodule update --init --recursive
 * Install driver for BNO055 IMU: `sudo pip3 install adafruit-circuitpython-bno055`.
 * Install driver for MPL3115A2 Baro/Temp/Alt Sensor: `sudo pip3 install adafruit-circuitpython-mpl3115a2`.
 * Install driver for ICM20948 IMU: `sudo pip3 install sparkfun-qwiic-icm20948`.
+* Slow down baud rate by adding `dtparam=i2c_baudrate=10000` with `sudo nano /boot/firmware/usercfg.txt`
+* Ensure proper permissions to prevent i/o errors: 
+
+```
+cd /dev
+sudo chmod og+rwx gpio*
+```
 
 ### Set Up Cameras
 
@@ -92,14 +99,11 @@ rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/
   sudo mv arduino-1.8.3 /opt
   sudo /opt/arduino-1.8.3/install.sh
   ```
+  
+### Setting Up the GPS
 
-* In `Tools > Board > Boards Manager...`, install Arduino nRF528x Boards (Mbed OS).  This may take a few minutes.
-* Select `Tools > Board > Arduino Mbed OS Boards > Arduino Nano 33 BLE`
-* Select the proper port and test the Arduino with `File > Examples > Basics > Blink`
-  * Example: `/dev/ttyACM0`
-* In `Tools > Manage Libraries...` install the following
-  * ArduinoBLE
-  * Nano33BLESensor (Install all required libraries)
+* Install ROS NMEA libary: `sudo apt-get install ros-noetic nmea_navsat_driver`
+* Identify USB port for Arduino in Arduino IDE and edit launch files in `~/ros-hab-dcs`
 
 ## Running system
 
