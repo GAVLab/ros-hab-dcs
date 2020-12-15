@@ -6,6 +6,8 @@ e31d12883bfbcbc0df62b6f3eedd3b0b /home/gavlab/ros-hab-dcs/catkin_ws/devel/includ
 26a0303892d429b6b1cd737f9c296cb3 /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/image_publisher/ImagePublisherConfig.h
 0cedf24b20c40ec875223aaaf959a728 /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/image_rotate/ImageRotateConfig.h
 bf88582feb7cb25c3de2bd1d0620edd2 /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/image_view/ImageViewConfig.h
+633e86b5b784f05a6b42ac0c3e8b3f34 /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/raspicam_node/CameraConfig.h
+c8f17d6ca80e493e5088d526f18ca32d /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/raspicam_node/MotionVectors.h
 52f901c5891cf2cb333074fd9ef24a54 /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/rosserial_arduino/Adc.h
 e0d138a5ab7e8fe6ead6f7fdd7e834c2 /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/rosserial_arduino/Test.h
 08392c3dce8999b06e7bfc18076a173a /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/rosserial_mbed/Adc.h
@@ -28,6 +30,8 @@ cf247d6b747765817ece2f0a6893b846 /home/gavlab/ros-hab-dcs/catkin_ws/devel/includ
 56cf3b9366dbf8a34f2608f0644fcea2 /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/sensor_msgs_ext/temperature.h
 62a7fd5f7cf7b8b5f5da62ed2eb1dc0e /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/sensor_msgs_ext/time_reference.h
 35708aa8bff002d85818188ecb3850ff /home/gavlab/ros-hab-dcs/catkin_ws/devel/include/stereo_image_proc/DisparityConfig.h
+d01be3bdd9f453d6d22399fc879cf6b5 /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/python3/dist-packages/raspicam_node/msg/_MotionVectors.py
+eb2b3bcc0a2b99e0ae338f3a3c9d8314 /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/python3/dist-packages/raspicam_node/msg/__init__.py
 039c835e972d41990763bc33b7488d97 /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/python3/dist-packages/rosserial_arduino/msg/_Adc.py
 f9d307ca4884e844494efae94fc62451 /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/python3/dist-packages/rosserial_arduino/msg/__init__.py
 277b257351ef6110060eefeacc94679a /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/python3/dist-packages/rosserial_arduino/srv/_Test.py
@@ -57,6 +61,7 @@ e758d2c21abaefefe99ac3e39a823f45 /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/py
 6572adef04e42d8deceb6ab3676f5d3b /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/python3/dist-packages/sensor_msgs_ext/srv/__init__.py
 e8b0636f2c0b6eacd6a1332eceb67d3d /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/python3/dist-packages/sensor_msgs_ext/srv/_get_proximity_configuration.py
 7ec706c1ae87b32dc3497c94c8434576 /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/python3/dist-packages/sensor_msgs_ext/srv/_set_axis_home.py
+f2f0599ea45321cc883ee9048c067868 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/common-lisp/ros/raspicam_node/msg/MotionVectors.lisp
 e563aaaff0e122bf4f01f7c4542abbdb /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/common-lisp/ros/rosserial_arduino/msg/Adc.lisp
 a9e579525773371dedc454eae480a9ef /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/common-lisp/ros/rosserial_arduino/srv/Test.lisp
 3d109cc7e0bc037eeaf63a250c2251c2 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/common-lisp/ros/rosserial_mbed/msg/Adc.lisp
@@ -78,6 +83,7 @@ af4640a8a4595af4f4df4e71c1ba5328 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/
 f27d5aeb236ee643761c7f8acb3acfa0 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/common-lisp/ros/sensor_msgs_ext/msg/time_reference.lisp
 03cadaf44f772aa3693229e6616e5386 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/common-lisp/ros/sensor_msgs_ext/srv/get_proximity_configuration.lisp
 aff2ea168f1ff29356926995f3e96ac6 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/common-lisp/ros/sensor_msgs_ext/srv/set_axis_home.lisp
+5fc44aa06d70e437087754b8707a9cd7 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/gennodejs/ros/raspicam_node/msg/MotionVectors.js
 903e7b84e9843914ca51dfa01858bfe0 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/gennodejs/ros/rosserial_arduino/msg/Adc.js
 290ebdc16d7f595dc6db3f7f6ed8923f /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/gennodejs/ros/rosserial_arduino/srv/Test.js
 34fe8aba08249aea67cd8e44ad351cf0 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/gennodejs/ros/rosserial_mbed/msg/Adc.js
@@ -99,6 +105,8 @@ e548ff20546f6e7e472539be3f044480 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/
 394618b82c44095f0541c622b50ba57f /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/gennodejs/ros/sensor_msgs_ext/msg/time_reference.js
 ad98e843d57a55e8690474bee63caa65 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/gennodejs/ros/sensor_msgs_ext/srv/get_proximity_configuration.js
 5db794dcd7131390063d7e8f55ebb1c0 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/gennodejs/ros/sensor_msgs_ext/srv/set_axis_home.js
+c60a4370af92fc1262be608654fdc90b /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/roseus/ros/raspicam_node/manifest.l
+79132925391edd074355b802468fd4af /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/roseus/ros/raspicam_node/msg/MotionVectors.l
 e0e945223af2e78646cf031d48d1b697 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/roseus/ros/rosserial_arduino/manifest.l
 7ea9f8f06065748545edf7934afcf252 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/roseus/ros/rosserial_arduino/msg/Adc.l
 1811aabebeab81df18ea63046c61d3b0 /home/gavlab/ros-hab-dcs/catkin_ws/devel/share/roseus/ros/rosserial_arduino/srv/Test.l
@@ -140,3 +148,10 @@ f3189db3a94ea57b2ad0694ed2fc85a9 image_pipeline/image_proc/CMakeFiles/image_proc
 c67cb46659e3edc90ebad60b0a7cb30a image_pipeline/image_rotate/CMakeFiles/image_rotate_gencfg
 052762dda3b9b872fea73e7cf03401e7 image_pipeline/image_view/CMakeFiles/image_view_gencfg
 c6b9d05733dead953aa9d05ca7d56489 image_pipeline/stereo_image_proc/CMakeFiles/stereo_image_proc_gencfg
+68afdd4d705c51e11444764e5b1433c1 raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors
+07e0741b717304e9c8b7f87b4554d32a raspicam_node/CMakeFiles/raspicam_node_gencfg
+07e0741b717304e9c8b7f87b4554d32a raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp
+07e0741b717304e9c8b7f87b4554d32a raspicam_node/CMakeFiles/raspicam_node_generate_messages_eus
+07e0741b717304e9c8b7f87b4554d32a raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp
+07e0741b717304e9c8b7f87b4554d32a raspicam_node/CMakeFiles/raspicam_node_generate_messages_nodejs
+07e0741b717304e9c8b7f87b4554d32a raspicam_node/CMakeFiles/raspicam_node_generate_messages_py
