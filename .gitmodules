@@ -25,3 +25,9 @@
 [submodule "catkin_ws/src/image_pipeline"]
 	path = catkin_ws/src/image_pipeline
 	url = https://github.com/ros-perception/image_pipeline.git
+[submodule "catkin_ws/src/ros_bno08x"]
+	path = catkin_ws/src/ros_bno08x
+	url = https://github.com/GAVLab/ros_bno08x
+[submodule "catkin_ws/catkin_ws/src/raspicam_node"]
+	path = catkin_ws/catkin_ws/src/raspicam_node
+	url = https://github.com/UbiquityRobotics/raspicam_node

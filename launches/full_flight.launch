@@ -1,35 +1,57 @@
 <launch>
-    <node name="mpl3115a2_altimeter" pkg="ros_mpl3115a2" type="talker.py" respawn="true" respawn_delay="2">
-    </node>
+
+    <node name="raspi_cpu_temp" pkg="raspi_cpu_temp" type="raspi_cpu_temp_node.py" respawn="true" respawn_delay="2"></node>
+    
+    <node name="mpl3115a2_altimeter" pkg="ros_mpl3115a2" type="talker.py" respawn="true" respawn_delay="2"></node>
+    
     <node ns="bno055_imu" name="bno055_imu" pkg="imu_bno055" type="bno055_i2c_node" respawn="true" respawn_delay="2">
         <param name="device" type="string" value="/dev/i2c-1"/>
         <param name="address" type="int" value="40"/> <!-- 0x28 == 40 is the default for BNO055 -->
         <param name="frame_id" type="string" value="imu"/>
     </node>
-    <node name="icm20948_imu" pkg="ros_icm20948" type="talker.py" respawn="true" respawn_delay="2">
+    
+    <node name="icm20948_imu" pkg="ros_icm20948" type="talker.py" respawn="true" respawn_delay="2"></node>
+    
+  <arg name="enable_raw" default="false"/>
+  <arg name="enable_imv" default="false"/>
+  <arg name="camera_frame_id" default="raspicam"/>
+  <arg name="camera_name" default="down_cam"/>
+  
+  <node type="raspicam_node" pkg="raspicam_node" name="down_cam" output="screen">
+    <param name="private_topics" value="true"/>
+
+    <param name="camera_frame_id" value="$(arg camera_frame_id)"/>
+    <param name="enable_raw" value="$(arg enable_raw)"/>
+    <param name="enable_imv" value="$(arg enable_imv)"/>
+
+    <param name="camera_info_url" value="package://raspicam_node/camera_info/camerav2_1280x960.yaml"/>
+    <param name="camera_name" value="$(arg camera_name)"/>
+    <param name="width" value="2592"/>
+    <param name="height" value="1944"/>
+
+    <param name="framerate" value="5"/>
+    <param name="quality" value="70"/>
+    <param name="exposure_mode" value="antishake"/>
+    <param name="shutter_speed" value="0"/>
+  </node>
+  
+    
+    <node name="side_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+        <param name="video_device" value="/dev/video0" />
+        <param name="image_width" value="3264" />
+        <param name="image_height" value="2448" />
+        <param name="pixel_format" value="yuyv" />
+        <param name="camera_frame_id" value="side_cam" />
+        <param name="io_method" value="mmap"/>
+        <param name="framerate" value="1"/>
     </node>
-    <node name="down_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/video2" />
-    <param name="image_width" value="1920" />
-    <param name="image_height" value="1080" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_frame_id" value="down_cam" />
-    <param name="io_method" value="mmap"/>
-    <param name="framerate" value="15"/>
-  </node>
-  <node name="side_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/video0" />
-    <param name="image_width" value="1920" />
-    <param name="image_height" value="1080" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_frame_id" value="side_cam" />
-    <param name="io_method" value="mmap"/>
-    <param name="framerate" value="15"/>
-  </node>
-  <node name="republish" pkg ="image_transport" type="republish" output="screen" args="raw in:=side_cam/image_raw compressed out:=side_cam/image_compressed">
-  </node>
-  <node name="dynparam_side" pkg="dynamic_reconfigure" type="dynparam" args="set side_cam/image_raw/compressed/ format png">
-  </node>
-  <node name="dynparam_down" pkg="dynamic_reconfigure" type="dynparam" args="set down_cam/image_raw/compressed/ format png">
-  </node>
+    
+    <node name="republish_side" pkg ="image_transport" type="republish" output="screen" args="raw in:=side_cam/image_raw compressed out:=side_cam/image_compressed"></node>
+    
+<!--    
+    <node name="dynparam_side_format" pkg="dynamic_reconfigure" type="dynparam" args="set side_cam/image_raw/compressed/ format png"></node>
+    <node name="dynparam_side_level" pkg="dynamic_reconfigure" type="dynparam" args="set side_cam/image_raw/compressed/ png_level 1"></node>
+    <node name="dynparam_down_format" pkg="dynamic_reconfigure" type="dynparam" args="set down_cam/image_raw/compressed/ format png"></node>
+    <node name="dynparam_down_level" pkg="dynamic_reconfigure" type="dynparam" args="set down_cam/image_raw/compressed/ png_level 1"></node>
+-->
 </launch>
