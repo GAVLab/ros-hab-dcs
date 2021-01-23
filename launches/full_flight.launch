@@ -1,5 +1,10 @@
 <launch>
 
+<node ns="mt3339" name="nmea_navsat_driver" pkg="nmea_navsat_driver" type = "nmea_serial_driver" respawn="true" respawn_delay="2">
+        <param name="port" type="string" value="/dev/ttyUSB0"/>
+        <param name="baud" type="int" value="9600"/>
+    </node>
+
     <node name="raspi_cpu_temp" pkg="raspi_cpu_temp" type="raspi_cpu_temp_node.py" respawn="true" respawn_delay="2"></node>
     
     <node name="mpl3115a2_altimeter" pkg="ros_mpl3115a2" type="talker.py" respawn="true" respawn_delay="2"></node>
@@ -33,25 +38,9 @@
     <param name="quality" value="70"/>
     <param name="exposure_mode" value="antishake"/>
     <param name="shutter_speed" value="0"/>
+    <param name="video_stabilisation" value="true"/>
   </node>
-  
     
-    <node name="side_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
-        <param name="video_device" value="/dev/video0" />
-        <param name="image_width" value="3264" />
-        <param name="image_height" value="2448" />
-        <param name="pixel_format" value="yuyv" />
-        <param name="camera_frame_id" value="side_cam" />
-        <param name="io_method" value="mmap"/>
-        <param name="framerate" value="1"/>
-    </node>
-    
-    <node name="republish_side" pkg ="image_transport" type="republish" output="screen" args="raw in:=side_cam/image_raw compressed out:=side_cam/image_compressed"></node>
-    
-<!--    
-    <node name="dynparam_side_format" pkg="dynamic_reconfigure" type="dynparam" args="set side_cam/image_raw/compressed/ format png"></node>
-    <node name="dynparam_side_level" pkg="dynamic_reconfigure" type="dynparam" args="set side_cam/image_raw/compressed/ png_level 1"></node>
-    <node name="dynparam_down_format" pkg="dynamic_reconfigure" type="dynparam" args="set down_cam/image_raw/compressed/ format png"></node>
-    <node name="dynparam_down_level" pkg="dynamic_reconfigure" type="dynparam" args="set down_cam/image_raw/compressed/ png_level 1"></node>
--->
+  <node name="republish_side" pkg ="image_transport" type="republish" output="screen" args="raw in:=side_cam/image_raw compressed out:=side_cam/image_compressed"></node>
+
 </launch>

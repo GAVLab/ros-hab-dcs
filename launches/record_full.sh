@@ -1,4 +1,4 @@
-rosbag record -o ~/bagfiles/flight --split --duration=1m subset \
+rosbag record -o ~/bagfiles/flight --split --duration=5m subset \
 /rosout /rousout_agg \
 /side_cam/camera_info /side_cam/image_raw/compressed /side_cam/image_raw/compressed/parameter_descriptions \
 /down_cam/camera_info /down_cam/image/compressed /down_cam/parameter_descriptions \
