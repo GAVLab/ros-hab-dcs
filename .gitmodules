@@ -31,3 +31,6 @@
 [submodule "catkin_ws/src/ros_bno055"]
 	path = catkin_ws/src/ros_bno055
 	url = https://github.com/GAVLab/ros_bno055
+[submodule "catkin_ws/src/ros-imu-bno055"]
+	path = catkin_ws/src/ros-imu-bno055
+	url = https://github.com/dheera/ros-imu-bno055
