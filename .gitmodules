@@ -1,9 +1,6 @@
 [submodule "catkin_ws/arduino_test_scripts/SparkFun_Trackuino"]
 	path = catkin_ws/arduino_test_scripts/SparkFun_Trackuino
 	url = https://github.com/sparkfun/SparkFun_Trackuino
-[submodule "catkin_ws/src/ros-imu-bno055"]
-	path = catkin_ws/src/ros-imu-bno055
-	url = https://github.com/dheera/ros-imu-bno055
 [submodule "catkin_ws/src/ros_mpl3115a2"]
 	path = catkin_ws/src/ros_mpl3115a2
 	url = https://github.com/GAVLab/ros_mpl3115a2
@@ -34,3 +31,6 @@
 [submodule "catkin_ws/src/ros_bno055"]
 	path = catkin_ws/src/ros_bno055
 	url = https://github.com/GAVLab/ros_bno055
+[submodule "catkin_ws/src/ros-imu-bno055"]
+	path = catkin_ws/src/ros-imu-bno055
+	url = https://github.com/dheera/ros-imu-bno055

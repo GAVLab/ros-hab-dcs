@@ -5,7 +5,12 @@
 ### Clone repository and get submodules
 
 ```bash
-git clone https://github.com/GAVLab/ros-hab-dcs
+git clone https://github.com/GAVLab/ros-hab-dcs --recursive
+```
+
+If you are having trouble with submodules try the following commands
+
+```bash
 git submodule update --init --recursive
 ```
 
