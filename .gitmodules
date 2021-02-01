@@ -29,7 +29,7 @@
 	path = catkin_ws/src/ros_bno08x
 	url = https://github.com/GAVLab/ros_bno08x
 [submodule "catkin_ws/catkin_ws/src/raspicam_node"]
-	path = catkin_ws/catkin_ws/src/raspicam_node
+	path = catkin_ws/src/raspicam_node
 	url = https://github.com/UbiquityRobotics/raspicam_node
 [submodule "catkin_ws/src/ros_bno055"]
 	path = catkin_ws/src/ros_bno055
