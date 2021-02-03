@@ -55,7 +55,7 @@
 // APRS comment: this goes in the comment portion of the APRS message. You
 // might want to keep this short. The longer the packet, the more vulnerable
 // it is to noise. 
-#define APRS_COMMENT    "AU GAVLAB: HAB (radio test)"
+#define APRS_COMMENT    "AU GAVLAB: HAB"
 
 
 // --------------------------------------------------------------------------
@@ -213,9 +213,9 @@
 // 3. When flashing the firmware, disconnect the GPS from the RX pin or you
 //    will get errors.
 
- //#define DEBUG_GPS    // GPS sentence dump and checksum validation
- #define DEBUG_AX25   // AX.25 frame dump
- //#define DEBUG_MODEM  // Modem ISR overrun and profiling
+// #define DEBUG_GPS    // GPS sentence dump and checksum validation
+// #define DEBUG_AX25   // AX.25 frame dump
+//#define DEBUG_MODEM  // Modem ISR overrun and profiling
 //#define DEBUG_AFSK   // AFSK (modulation) output
 // #define DEBUG_RESET  // AVR reset
 // #define DEBUG_SENS   // Sensors
