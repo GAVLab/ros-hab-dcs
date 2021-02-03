@@ -40,7 +40,5 @@
     <param name="shutter_speed" value="0"/>
     <param name="video_stabilisation" value="true"/>
   </node>
-    
-  <node name="republish_side" pkg ="image_transport" type="republish" output="screen" args="raw in:=side_cam/image_raw compressed out:=side_cam/image_compressed"></node>
 
 </launch>
