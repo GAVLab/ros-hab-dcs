@@ -22,15 +22,9 @@
 [submodule "catkin_ws/src/image_pipeline"]
 	path = catkin_ws/src/image_pipeline
 	url = https://github.com/ros-perception/image_pipeline.git
-[submodule "catkin_ws/src/ros_bno08x"]
-	path = catkin_ws/src/ros_bno08x
-	url = https://github.com/GAVLab/ros_bno08x
 [submodule "catkin_ws/catkin_ws/src/raspicam_node"]
 	path = catkin_ws/src/raspicam_node
 	url = https://github.com/UbiquityRobotics/raspicam_node
-[submodule "catkin_ws/src/ros_bno055"]
-	path = catkin_ws/src/ros_bno055
-	url = https://github.com/GAVLab/ros_bno055
-[submodule "catkin_ws/src/ros-imu-bno055"]
-	path = catkin_ws/src/ros-imu-bno055
-	url = https://github.com/dheera/ros-imu-bno055
+[submodule "catkin_ws/src/bosch_imu_driver"]
+	path = catkin_ws/src/bosch_imu_driver
+	url = https://github.com/GAVLab/bosch_imu_driver

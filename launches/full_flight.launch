@@ -1,6 +1,6 @@
 <launch>
 
-<node ns="mt3339" name="nmea_navsat_driver" pkg="nmea_navsat_driver" type = "nmea_serial_driver" respawn="true" respawn_delay="2">
+    <node ns="mt3339" name="nmea_navsat_driver" pkg="nmea_navsat_driver" type = "nmea_serial_driver" respawn="true" respawn_delay="2">
         <param name="port" type="string" value="/dev/ttyUSB0"/>
         <param name="baud" type="int" value="9600"/>
     </node>
@@ -9,36 +9,41 @@
     
     <node name="mpl3115a2_altimeter" pkg="ros_mpl3115a2" type="talker.py" respawn="true" respawn_delay="2"></node>
     
-    <node ns="bno055_imu" name="bno055_imu" pkg="imu_bno055" type="bno055_i2c_node" respawn="true" respawn_delay="2">
-        <param name="device" type="string" value="/dev/i2c-1"/>
-        <param name="address" type="int" value="40"/> <!-- 0x28 == 40 is the default for BNO055 -->
-        <param name="frame_id" type="string" value="imu"/>
+    <node pkg="bosch_imu_driver" type="bosch_imu_node.py" name="bosch_imu_node" output="screen" respawn="true" respawn_delay="2">
+        <param name="port" type="string" value="/dev/serial0"/>        
+        <param name="frequency" type="int" value="100"/>
+        <param name="frame_id" type="string" value="imu_bno055"/>
+        <remap from="/imu/data" to="/bno055_imu/data"/>
+        <remap from="/imu/raw" to="/bno055_imu/raw"/>
+        <remap from="/imu/temp" to="/bno055_imu/temp"/>
+        <remap from="/imu/mag" to="/bno055_imu/mag"/>
+        <remap from="/imu/status" to="/bno055_imu/status"/>
     </node>
     
     <node name="icm20948_imu" pkg="ros_icm20948" type="talker.py" respawn="true" respawn_delay="2"></node>
     
-  <arg name="enable_raw" default="false"/>
-  <arg name="enable_imv" default="false"/>
-  <arg name="camera_frame_id" default="raspicam"/>
-  <arg name="camera_name" default="down_cam"/>
+    <arg name="enable_raw" default="false"/>
+    <arg name="enable_imv" default="false"/>
+    <arg name="camera_frame_id" default="raspicam"/>
+    <arg name="camera_name" default="down_cam"/>
   
-  <node type="raspicam_node" pkg="raspicam_node" name="down_cam" output="screen">
-    <param name="private_topics" value="true"/>
+    <node type="raspicam_node" pkg="raspicam_node" name="down_cam" output="screen">
+        <param name="private_topics" value="true"/>
 
-    <param name="camera_frame_id" value="$(arg camera_frame_id)"/>
-    <param name="enable_raw" value="$(arg enable_raw)"/>
-    <param name="enable_imv" value="$(arg enable_imv)"/>
+        <param name="camera_frame_id" value="$(arg camera_frame_id)"/>
+        <param name="enable_raw" value="$(arg enable_raw)"/>
+        <param name="enable_imv" value="$(arg enable_imv)"/>
 
-    <param name="camera_info_url" value="package://raspicam_node/camera_info/camerav2_1280x960.yaml"/>
-    <param name="camera_name" value="$(arg camera_name)"/>
-    <param name="width" value="2592"/>
-    <param name="height" value="1944"/>
+        <param name="camera_info_url" value="package://raspicam_node/camera_info/camerav2_1280x960.yaml"/>
+        <param name="camera_name" value="$(arg camera_name)"/>
+        <param name="width" value="2592"/>
+        <param name="height" value="1944"/>
 
-    <param name="framerate" value="5"/>
-    <param name="quality" value="70"/>
-    <param name="exposure_mode" value="antishake"/>
-    <param name="shutter_speed" value="0"/>
-    <param name="video_stabilisation" value="true"/>
-  </node>
+        <param name="framerate" value="5"/>
+        <param name="quality" value="70"/>
+        <param name="exposure_mode" value="antishake"/>
+        <param name="shutter_speed" value="0"/>
+        <param name="video_stabilisation" value="true"/>
+    </node>
 
 </launch>
