@@ -7,8 +7,18 @@ import re
 
 
 # Map bounding box
-BBox = ((-86.1575,-83.5620,31.2410,33.0800))
-map_img = plt.imread("map.png")
+range = 'auburn'
+if range == 'auburn':
+    BBox = ((-85.6110,-84.9712,32.4864,32.7197))
+    map_img = plt.imread("map_auburn.png")
+elif range == 'auburn_macon':
+    BBox = ((-85.6514,-82.8561,32.1011,33.1847))
+    map_img = plt.imread("map_auburn_macon.png")
+elif range == 'macon':
+    BBox = ((-83.7592,-82.4369,32.7313,33.5575))
+    map_img = plt.imread("map_macon.png")
+else:
+    print("Unknown range")
 
 # Using readlines()
 file1 = open('log.txt', 'r')
@@ -32,14 +42,14 @@ for line in Lines:
     altitudes[count] = packet['altitude']
     speeds[count] = packet['speed']
     courses[count] = packet['course']
-    voltages[count] = int(re.findall(r'V=(\w+)', packet['comment'])[0]) 
+    voltages[count] = int(re.findall(r'V=(\w+)', packet['comment'])[0])/1000
     dt = datetime.utcfromtimestamp(timestamps[count]).strftime('%Y-%m-%d %H:%M:%S')
     print("%s:\t[Lat,Lon,Alt(m)] = %.6f,%.6f,%.2f\tCourse = %d\tSpeed = %.2f\tV = %.2f\t" % 
     (dt,latitudes[count],longitudes[count],altitudes[count],courses[count],speeds[count],voltages[count]))
     count += 1
 
 # Plot results    
-fig,ax = plt.subplots(figsize=(8,6))
+fig,ax = plt.subplots(figsize=(8,4))
 
 ax.scatter(longitudes,latitudes,zorder=1,c='b',s=20)
 
@@ -63,7 +73,7 @@ ax[0,1].set(xlabel="Index",ylabel="Speed (m/s)")
 ax[0,1].set_title("GPS Speed")
 
 ax[1,1].plot(voltages)
-ax[1,1].set(xlabel="Index",ylabel="Voltage V")
+ax[1,1].set(xlabel="Index",ylabel="Voltage (V)")
 ax[1,1].set_title("Voltage Levels")
 
 plt.tight_layout()
