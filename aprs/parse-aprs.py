@@ -7,7 +7,7 @@ import re
 
 
 # Map bounding box
-range = 'auburn'
+range = 'auburn_macon'
 if range == 'auburn':
     BBox = ((-85.6110,-84.9712,32.4864,32.7197))
     map_img = plt.imread("map_auburn.png")
@@ -21,7 +21,7 @@ else:
     print("Unknown range")
 
 # Using readlines()
-file1 = open('log.txt', 'r')
+file1 = open('aprs-log.txt', 'r')
 Lines = file1.readlines()
 
 count = 0
