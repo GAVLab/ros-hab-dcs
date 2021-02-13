@@ -28,12 +28,12 @@ Please see the installation guide for how to setup the software packages and run
 
 ### System Diagram
 
-<img src="diagrams/system_diagram.png"
+<img src="diagrams/sn01_system_diagram.png"
      width="700" />
 
 ### Arduino Protoboard Schematic
 
-<img src="diagrams/arduino_pinout_diagram.png"
+<img src="diagrams/sn01_arduino_pinout_diagram.png"
      width="700" />
 
 # Flights
