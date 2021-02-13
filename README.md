@@ -14,8 +14,8 @@ Please see the installation guide for how to setup the software packages and run
 
 ## Hardware
 
-<img src="documentation/Photos/sn01_exterior.JPG" height="250"></img>
-<img src="documentation/Photos/sn01_interior.JPG" height="250"></img>
+<img src="documentation/Photos/sn01_exterior.JPG" height="350"></img>
+<img src="documentation/Photos/sn01_interior.JPG" height="350"></img>
 
 ### Sensors
 
@@ -29,12 +29,12 @@ Please see the installation guide for how to setup the software packages and run
 ### System Diagram
 
 <img src="diagrams/system_diagram.png"
-     width="500" />
+     width="700" />
 
 ### Arduino Protoboard Schematic
 
 <img src="diagrams/arduino_pinout_diagram.png"
-     width="500" />
+     width="700" />
 
 # Flights
 
