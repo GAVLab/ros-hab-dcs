@@ -2,7 +2,7 @@
 
 Robot Operating System (ROS) High Altitude Balloon (HAB) Data Collection System (DCS)
 
-**Status:** Development In-Progress
+**Status:** Launched maiden flight
 
 ## Introduction
 
@@ -12,9 +12,12 @@ This is a system to collect a high altitude balloon dataset utilizing ROS for ae
 
 Please see the installation guide for how to setup the software packages and run the system: [documentation/INSTALLATION.md](documentation/INSTALLATION.md)
 
-## Electrical Hardware
+## Hardware
 
-## Sensors
+<img style="height:250px" src="documentation/photos/sn01_exterior.JPG"></img>
+<img style="height:250px" src="documentation/photos/sn01_interior.JPG"></img>
+
+### Sensors
 
 * Downward Facing Camera - [Arducam for Raspberry Pi Camera 5MP OV5647 1080P](https://www.amazon.com/Arducam-Camera-Raspberry-Interchangeable-LS-2717CS/dp/B012ETE75I/?dchild=1&keywords=Arducam%2B12MP%2BIMX477&qid=1602259929&sr=8-3&th=1): [datasheet](https://cdn.sparkfun.com/datasheets/Dev/RaspberryPi/ov5647_full.pdf)
 * Side Facing Camera - [Arducam 8MP 1080P USB Camera V2 Module](https://www.amazon.com/Arducam-Camera-Raspberry-Windows-Android/dp/B07YHK63DS/?dchild=1&keywords=USB+Camera+for+Raspberry+Pi&qid=1602001136&s=electronics&sr=1-3&th=1)
@@ -32,3 +35,7 @@ Please see the installation guide for how to setup the software packages and run
 
 <img src="diagrams/arduino_pinout_diagram.png"
      style="width:500px;" />
+
+# Flights
+
+* February 8, 2021 (Auburn,AL to Milledgville,GA): [summary](documentation/Flight_1/Post_Flight_Analysis.md)
