@@ -14,8 +14,8 @@ Please see the installation guide for how to setup the software packages and run
 
 ## Hardware
 
-<img style="height:250px" src="documentation/Photos/sn01_exterior.JPG"></img>
-<img style="height:250px" src="documentation/Photos/sn01_interior.JPG"></img>
+<img src="documentation/Photos/sn01_exterior.JPG" height="250"></img>
+<img src="documentation/Photos/sn01_interior.JPG" height="250"></img>
 
 ### Sensors
 
