@@ -56,4 +56,4 @@
 * Handwarmer added extra weight.  A smaller box size with new antenna might reduce weight dramatically while still staying warm.
 * Construct radar reflector out of cereal box to reduce weight.  Apply aluminum tape before assembling to reduce time and amount of tape used.
 * Add i2c battery monitor sensor: https://www.adafruit.com/product/904
-* Yellow exterior color is harder to see in forest.  Bright orange or red is better.
+* Yellow exterior color is harder to see in forest.  Spray paint melts foam.  Bright orange is better.

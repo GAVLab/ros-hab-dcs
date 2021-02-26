@@ -1,9 +1,17 @@
 import aprslib
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+import cv2 as cv
 from datetime import datetime
 import re
+
+def savefig(path,fig):
+    canvas = FigureCanvasAgg(fig)
+    canvas.draw()
+    plot_img = np.asarray(canvas.buffer_rgba())
+    plot_img = cv.cvtColor(plot_img,cv.COLOR_RGB2BGR)
+    cv.imwrite(path,plot_img)
 
 # Parameters
 region = 'auburn_macon'
@@ -58,7 +66,7 @@ for line in Lines:
     count += 1
 
 # Plot results    
-fig,ax = plt.subplots(figsize=(8,4))
+fig,ax = plt.subplots(figsize=(10,4))
 
 ax.scatter(longitudes,latitudes,zorder=1,c='b',s=20)
 
@@ -67,29 +75,34 @@ ax.set_ylim(BBox[2],BBox[3])
 
 ax.imshow(map_img,zorder=0,extent = BBox, aspect='equal')
 
-fig,ax = plt.subplots(2,2)
+savefig('plot_path.png',fig)
 
-ax[0,0].plot(timestamps,altitudes,marker='o')
+fig,ax = plt.subplots(1,2,figsize=(10,4))
+
+ax[0].plot(timestamps,altitudes,marker='o')
 if unit_system == "metric":
-    ax[0,0].set(xlabel="Time",ylabel="Altitude (m)")
+    ax[0].set(xlabel="Time",ylabel="Altitude (m)")
 else:
-    ax[0,0].set(xlabel="Time",ylabel="Altitude (ft)")
-ax[0,0].set_title("Altitude")
+    ax[0].set(xlabel="Time",ylabel="Altitude (ft)")
+ax[0].set_title("Altitude")
 
-ax[1,0].plot(timestamps,courses,marker='o')
-ax[1,0].set(xlabel="Time",ylabel="Course")
-ax[1,0].set_title("GPS Course")
 
-ax[0,1].plot(timestamps,speeds,marker='o')
+ax[1].plot(timestamps,speeds,marker='o')
 if unit_system == "metric":
-    ax[0,1].set(xlabel="Time",ylabel="Speed (m/s)")
+    ax[1].set(xlabel="Time",ylabel="Speed (m/s)")
 else:
-    ax[0,1].set(xlabel="Time",ylabel="Speed (mph)")
-ax[0,1].set_title("GPS Speed")
+    ax[1].set(xlabel="Time",ylabel="Speed (mph)")
+ax[1].set_title("GPS Speed")
 
-ax[1,1].plot(timestamps,voltages,marker='o')
-ax[1,1].set(xlabel="Time",ylabel="Voltage (V)")
-ax[1,1].set_title("Voltage Levels")
+# ax[1,0].plot(timestamps,courses,marker='o')
+# ax[1,0].set(xlabel="Time",ylabel="Course")
+# ax[1,0].set_title("GPS Course")
 
-plt.tight_layout()
+# ax[1,1].plot(timestamps,voltages,marker='o')
+# ax[1,1].set(xlabel="Time",ylabel="Voltage (V)")
+# ax[1,1].set_title("Voltage Levels")
+
+savefig('plot_data.png',fig)
+
+# plt.tight_layout()
 plt.show()
