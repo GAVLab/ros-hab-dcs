@@ -76,6 +76,17 @@ sudo chmod og+rwx gpio*
 
 ### Setup UART  on Pi
 * Follow the instructions found here: https://raspberrypi.stackexchange.com/questions/114366/rpi4-serial-port-not-working-on-either-raspberry-os-or-ubuntu
+* Enable UART Permissions
+```bash
+sudo adduser $USER tty
+sudo adduser $USER dialout 
+sudo chmod g+r /dev/ttyAMA0
+sudo chmod g+r /dev/ttyUSB0
+```
+
+### Setting Up the GPS
+
+* Install ROS ublox: `sudo apt install ros-noetic-ublox`
 
 ### Set Up Cameras
 
@@ -101,23 +112,6 @@ rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/
 rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/down_cam/image_raw camera:=/down_cam
 ```
 
-### Setting Up the Arduino (SN01 variant only)
-
-* Download Arduino IDE onto Raspberry Pi (Linux ARM 32-bits): https://www.arduino.cc/en/software
-* Install IDE
-
-  ```bash
-  cd Downloads/
-  tar -xf arduino-1.8.3-linuxarm.tar.xz
-  sudo mv arduino-1.8.3 /opt
-  sudo /opt/arduino-1.8.3/install.sh
-  ```
-* Identify USB port for Arduino in Arduino IDE and edit launch files in `~/ros-hab-dcs`
-
-### Setting Up the GPS
-
-* Install ROS NMEA libary: `sudo apt-get install -y ros-noetic-nmea-navsat-driver`
-* Fix decoding error by using `sudo nano /opt/ros/noetic/lib/python3/dist-packages/libnmea_navsat_driver/nodes/nmea_serial_driver.py` and changing the `decode('utf-8')` to `decode(encodings='utf-8',errors='ignore')`. (Issue #115 of https://github.com/ros-drivers/nmea_navsat_driver)
 
 ## Running system
 
