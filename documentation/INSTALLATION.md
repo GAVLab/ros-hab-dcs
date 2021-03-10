@@ -4,9 +4,8 @@
 
 ### Set Up the Pi (Basics)
 
-* Download and flash microSD with Ubuntu Mate 20.04 Raspberry Pi 32-bit (ubuntu-mate-20.04.1-desktop-armhf%2Braspi.img.xz): https://releases.ubuntu-mate.org/focal/armhf/
+* Download and flash microSD with Ubuntu Mate 20.04 Raspberry Pi 64-bit
 * Connect to AU_WiFi (if on Auburn University's network): http://www.eng.auburn.edu/admin/ens/helpdesk/on-campus/wireless.html
-* Install ROS Noetic: http://wiki.ros.org/noetic/Installation/Ubuntu
 
 ### Clone repository and get submodules
 
@@ -33,14 +32,23 @@ git submodule update --init --recursive
 
 * Login to VNC viewer with IP address
   
-### Install ROS
+### Install ROS and other Basics
 
  * Install ROS Noetic with this tutorial: http://wiki.ros.org/noetic/Installation/Ubuntu
  * ROS Desktop (not full) is sufficient.
- * Install Python
+ * Add repository to .bashrc
+ ```
+ echo "source ~/ros-hab-dcs/catkin_ws/devel/setup.bash" >> ~/.bashrc
+ source ~/.bashrc
+ ```
+ * Install Python 3
  ```
  sudo apt-get install python3
+ ```
 
+### Fix raspi_cpu_temp node
+* Open `~/ros-hab-dcs/catkin_ws/src/raspi_cpu_temp/scripts/raspi_cpu_temp_node.py`
+* Change first line to `#!/usr/bin/env python3`
   
 ### Set Up i2c on Pi
 
@@ -65,6 +73,9 @@ git submodule update --init --recursive
 cd /dev
 sudo chmod og+rwx gpio*
 ```
+
+### Setup UART  on Pi
+* Follow the instructions found here: https://raspberrypi.stackexchange.com/questions/114366/rpi4-serial-port-not-working-on-either-raspberry-os-or-ubuntu
 
 ### Set Up Cameras
 
