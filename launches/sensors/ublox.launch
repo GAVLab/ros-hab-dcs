@@ -7,7 +7,7 @@
         output="screen"
         clear_params="true"
         respawn="true"
-        respawn_delay="30">
+        respawn_delay="2">
     <rosparam command="load"
               file="gps_params.yaml" />
   </node>
