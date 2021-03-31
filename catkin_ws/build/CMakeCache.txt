@@ -396,7 +396,7 @@ UBUNTU:BOOL=TRUE
 UBUNTU_FOCAL:BOOL=TRUE
 
 //Path to a file.
-_file_name:FILEPATH=/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/test/test_rectify.xml
+_file_name:FILEPATH=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_test/test/rosserial_python_socket.test
 
 //Path to a file.
 _gmock_INCLUDES:FILEPATH=/usr/src/googletest/googlemock/include/gmock/gmock.h
@@ -445,6 +445,12 @@ boost_system_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_system-1.71.0
 
 //The directory containing a CMake configuration file for boost_thread.
 boost_thread_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_thread-1.71.0
+
+//Value Computed by CMake
+bosch_imu_driver_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/bosch_imu_driver
+
+//Value Computed by CMake
+bosch_imu_driver_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/bosch_imu_driver
 
 //Value Computed by CMake
 camera_calibration_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/image_pipeline/camera_calibration
@@ -722,6 +728,12 @@ pkgcfg_lib_swscale_swscale:FILEPATH=/usr/lib/arm-linux-gnueabihf/libswscale.so
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/noetic/share/pluginlib/cmake
+
+//Value Computed by CMake
+power_ina219_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/ros-power-ina219/power_ina219
+
+//Value Computed by CMake
+power_ina219_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/ros-power-ina219/power_ina219
 
 //Value Computed by CMake
 raspi_cpu_temp_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/raspi_cpu_temp
@@ -1128,7 +1140,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=21
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=35
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

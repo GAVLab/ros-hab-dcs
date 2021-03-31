@@ -9,6 +9,6 @@
         respawn="true"
         respawn_delay="2">
     <rosparam command="load"
-              file="gps_params.yaml" />
+              file="/home/gavlab/ros-hab-dcs/launches/sensors/gps_params.yaml" />
   </node>
 </launch>
