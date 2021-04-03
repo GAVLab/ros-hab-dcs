@@ -45,12 +45,16 @@ git submodule update --init --recursive
  ```
  sudo apt-get install python3
  ```
+ * Install various Python libraries
+ ```
+ pip3 install scipy
+ ```
 
 ### Fix raspi_cpu_temp node
 * Open `~/ros-hab-dcs/catkin_ws/src/raspi_cpu_temp/scripts/raspi_cpu_temp_node.py`
 * Change first line to `#!/usr/bin/env python3`
   
-### Set Up i2c on Pi
+### Setup i2c on Pi
 
 * Enable i2c
   
@@ -82,11 +86,11 @@ sudo chmod g+r /dev/ttyAMA0
 sudo chmod g+r /dev/ttyUSB0
 ```
 
-### Setting Up the GPS
+### Setup the GPS
 
 * Install ROS ublox: `sudo apt install ros-noetic-ublox`
 
-### Set Up Cameras
+### Setup Camera
 
 * ROS Libraries
 
@@ -115,5 +119,5 @@ rosrun camera_calibration cameracalibrator.py --size 9x6 --square 0.022 image:=/
 ```bash
 cd  ~/ros-hab-dcs/launches/
 roslaunch full_flight.launch
-./record.sh
+./record_full.sh
 ```
