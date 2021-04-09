@@ -181,7 +181,7 @@ raspicam_node_EXTERNAL_OBJECTS =
 /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/raspicam_node/raspicam_node: /usr/lib/arm-linux-gnueabihf/libmmal_core.so
 /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/raspicam_node/raspicam_node: /usr/lib/arm-linux-gnueabihf/libmmal_util.so
 /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/raspicam_node/raspicam_node: /usr/lib/arm-linux-gnueabihf/libmmal_vc_client.so
-/home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/raspicam_node/raspicam_node: /usr/lib/arm-linux-gnueabihf/libvchostif.a
+/home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/raspicam_node/raspicam_node: /opt/vc/lib/libvchostif.a
 /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/raspicam_node/raspicam_node: raspicam_node/CMakeFiles/raspicam_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gavlab/ros-hab-dcs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/gavlab/ros-hab-dcs/catkin_ws/devel/lib/raspicam_node/raspicam_node"
 	cd /home/gavlab/ros-hab-dcs/catkin_ws/build/raspicam_node && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/raspicam_node.dir/link.txt --verbose=$(VERBOSE)

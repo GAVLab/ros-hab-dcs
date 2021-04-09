@@ -249,6 +249,8 @@ ros/this_node.h
 /opt/ros/noetic/include/diagnostic_updater/ros/this_node.h
 diagnostic_msgs/DiagnosticArray.h
 /opt/ros/noetic/include/diagnostic_updater/diagnostic_msgs/DiagnosticArray.h
+diagnostic_msgs/DiagnosticStatus.h
+/opt/ros/noetic/include/diagnostic_updater/diagnostic_msgs/DiagnosticStatus.h
 diagnostic_updater/DiagnosticStatusWrapper.h
 /opt/ros/noetic/include/diagnostic_updater/diagnostic_updater/DiagnosticStatusWrapper.h
 boost/thread.hpp
@@ -265,6 +267,8 @@ diagnostic_updater/update_functions.h
 /opt/ros/noetic/include/diagnostic_updater/update_functions.h
 diagnostic_updater/diagnostic_updater.h
 -
+diagnostic_msgs/DiagnosticStatus.h
+/opt/ros/noetic/include/diagnostic_updater/diagnostic_msgs/DiagnosticStatus.h
 math.h
 -
 

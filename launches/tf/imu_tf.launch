@@ -1,0 +1,20 @@
+  <launch>
+
+    <node name="bno080_tf_broadcaster" pkg="imu_tf" type="imu_tf_broadcaster.py" respawn="false" output="screen" >
+      <param name="imu" type="string" value="bno080" />
+      <param name="xoffset" type="double" value="0.0" />
+      <param name="yoffset" type="double" value="0.5" />
+      <param name="zoffset" type="double" value="1.0" />
+    </node>
+    
+    <node name="icm20948_tf_broadcaster" pkg="imu_tf" type="imu_tf_broadcaster.py" respawn="false" output="screen" >
+      <param name="imu" type="string" value="icm20948" />
+      <param name="xoffset" type="double" value="0.0" />
+      <param name="yoffset" type="double" value="-0.5" />
+      <param name="zoffset" type="double" value="1.0" />
+    </node>
+    
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find imu_tf)/config.rviz" />
+
+
+  </launch>

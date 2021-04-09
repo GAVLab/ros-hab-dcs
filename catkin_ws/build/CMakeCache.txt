@@ -26,8 +26,6 @@ Boost_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Boost-1.71.0
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/include
 
-Boost_SYSTEM_LIBRARY_RELEASE:STRING=/usr/lib/arm-linux-gnueabihf/libboost_system.so.1.71.0
-
 Boost_THREAD_LIBRARY_RELEASE:STRING=/usr/lib/arm-linux-gnueabihf/libboost_thread.so.1.71.0
 
 //List of ';' separated packages to exclude
@@ -359,15 +357,6 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3
 
-//Path to a file.
-PYTHON_INCLUDE_DIR:PATH=/usr/include/python3.8
-
-//Path to a library.
-PYTHON_LIBRARY:FILEPATH=/usr/lib/arm-linux-gnueabihf/libpython3.8.so
-
-//Path to a library.
-PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
-
 //Specify specific Python version to use ('major.minor' or 'major')
 PYTHON_VERSION:STRING=3
 
@@ -396,7 +385,7 @@ UBUNTU:BOOL=TRUE
 UBUNTU_FOCAL:BOOL=TRUE
 
 //Path to a file.
-_file_name:FILEPATH=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_test/test/rosserial_python_socket.test
+_file_name:FILEPATH=/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_proc/test/test_rectify.xml
 
 //Path to a file.
 _gmock_INCLUDES:FILEPATH=/usr/src/googletest/googlemock/include/gmock/gmock.h
@@ -419,12 +408,6 @@ actionlib_DIR:PATH=/opt/ros/noetic/share/actionlib/cmake
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/noetic/share/actionlib_msgs/cmake
 
-//Value Computed by CMake
-bb_altimeter_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/bb_altimeter
-
-//Value Computed by CMake
-bb_altimeter_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/bb_altimeter
-
 //Path to a library.
 bcmhost_LIBS:FILEPATH=/usr/lib/arm-linux-gnueabihf/libbcm_host.so
 
@@ -439,9 +422,6 @@ boost_atomic_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_atomic-1.71.0
 
 //The directory containing a CMake configuration file for boost_headers.
 boost_headers_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_headers-1.71.0
-
-//The directory containing a CMake configuration file for boost_system.
-boost_system_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_system-1.71.0
 
 //The directory containing a CMake configuration file for boost_thread.
 boost_thread_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/boost_thread-1.71.0
@@ -496,12 +476,6 @@ diagnostic_msgs_DIR:PATH=/opt/ros/noetic/share/diagnostic_msgs/cmake
 
 //The directory containing a CMake configuration file for diagnostic_updater.
 diagnostic_updater_DIR:PATH=/opt/ros/noetic/share/diagnostic_updater/cmake
-
-//Value Computed by CMake
-driver_mt3339_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/driver_mt3339
-
-//Value Computed by CMake
-driver_mt3339_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/driver_mt3339
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/noetic/share/dynamic_reconfigure/cmake
@@ -628,28 +602,13 @@ image_view_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libcamera_calibration_
 image_view_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/image_pipeline/image_view
 
 //Value Computed by CMake
-imu_bno055_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/ros-imu-bno055/imu_bno055
+imu_tf_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/imu_tf
 
 //Value Computed by CMake
-imu_bno055_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/ros-imu-bno055/imu_bno055
+imu_tf_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/imu_tf
 
 //Path to a library.
 lib:FILEPATH=/opt/ros/noetic/lib/libcamera_calibration_parsers.so
-
-//The directory containing a CMake configuration file for libuvc.
-libuvc_DIR:PATH=libuvc_DIR-NOTFOUND
-
-//Value Computed by CMake
-libuvc_camera_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/libuvc_ros/libuvc_camera
-
-//Value Computed by CMake
-libuvc_camera_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/libuvc_ros/libuvc_camera
-
-//Value Computed by CMake
-libuvc_ros_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/libuvc_ros/libuvc_ros
-
-//Value Computed by CMake
-libuvc_ros_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/libuvc_ros/libuvc_ros
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/noetic/share/message_filters/cmake
@@ -671,9 +630,6 @@ mmalutil_LIBS:FILEPATH=/usr/lib/arm-linux-gnueabihf/libmmal_util.so
 
 //Path to a library.
 mmalvcclient_LIBS:FILEPATH=/usr/lib/arm-linux-gnueabihf/libmmal_vc_client.so
-
-//The directory containing a CMake configuration file for nav_msgs.
-nav_msgs_DIR:PATH=/opt/ros/noetic/share/nav_msgs/cmake
 
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/noetic/share/nodelet/cmake
@@ -742,22 +698,10 @@ raspi_cpu_temp_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/raspi_
 raspi_cpu_temp_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/raspi_cpu_temp
 
 //Value Computed by CMake
-raspi_temperature_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/raspi_temperature
-
-//Value Computed by CMake
-raspi_temperature_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/raspi_temperature
-
-//Value Computed by CMake
 raspicam_node_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/raspicam_node
 
 //Value Computed by CMake
 raspicam_node_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/raspicam_node
-
-//Value Computed by CMake
-ros_bno08x_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_bno08x
-
-//Value Computed by CMake
-ros_bno08x_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/ros_bno08x
 
 //Value Computed by CMake
 ros_icm20948_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/ros_icm20948
@@ -798,111 +742,6 @@ rospack_DIR:PATH=/opt/ros/noetic/share/rospack/cmake
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/noetic/share/rospy/cmake
 
-//Value Computed by CMake
-rosserial_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial
-
-//Value Computed by CMake
-rosserial_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial
-
-//Value Computed by CMake
-rosserial_arduino_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_arduino
-
-//Value Computed by CMake
-rosserial_arduino_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_arduino
-
-//Value Computed by CMake
-rosserial_chibios_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_chibios
-
-//Value Computed by CMake
-rosserial_chibios_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_chibios
-
-//Value Computed by CMake
-rosserial_client_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_client
-
-//The directory containing a CMake configuration file for rosserial_client.
-rosserial_client_DIR:PATH=/home/gavlab/ros-hab-dcs/catkin_ws/devel/share/rosserial_client/cmake
-
-//Value Computed by CMake
-rosserial_client_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_client
-
-//Value Computed by CMake
-rosserial_embeddedlinux_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_embeddedlinux
-
-//Value Computed by CMake
-rosserial_embeddedlinux_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_embeddedlinux
-
-//Value Computed by CMake
-rosserial_mbed_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_mbed
-
-//Value Computed by CMake
-rosserial_mbed_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_mbed
-
-//Value Computed by CMake
-rosserial_msgs_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_msgs
-
-//The directory containing a CMake configuration file for rosserial_msgs.
-rosserial_msgs_DIR:PATH=/home/gavlab/ros-hab-dcs/catkin_ws/devel/share/rosserial_msgs/cmake
-
-//Value Computed by CMake
-rosserial_msgs_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_msgs
-
-//Value Computed by CMake
-rosserial_python_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_python
-
-//The directory containing a CMake configuration file for rosserial_python.
-rosserial_python_DIR:PATH=/home/gavlab/ros-hab-dcs/catkin_ws/devel/share/rosserial_python/cmake
-
-//Value Computed by CMake
-rosserial_python_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_python
-
-//Value Computed by CMake
-rosserial_server_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_server
-
-//The directory containing a CMake configuration file for rosserial_server.
-rosserial_server_DIR:PATH=/home/gavlab/ros-hab-dcs/catkin_ws/devel/share/rosserial_server/cmake
-
-//Value Computed by CMake
-rosserial_server_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_server
-
-//Dependencies for the target
-rosserial_server_lookup_LIB_DEPENDS:STATIC=general;/usr/lib/arm-linux-gnueabihf/libpython3.8.so;
-
-//Value Computed by CMake
-rosserial_test_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_test
-
-//Value Computed by CMake
-rosserial_test_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_test
-
-//Value Computed by CMake
-rosserial_tivac_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_tivac
-
-//Value Computed by CMake
-rosserial_tivac_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_tivac
-
-//Value Computed by CMake
-rosserial_vex_cortex_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_vex_cortex
-
-//Value Computed by CMake
-rosserial_vex_cortex_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_vex_cortex
-
-//Value Computed by CMake
-rosserial_vex_v5_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_vex_v5
-
-//Value Computed by CMake
-rosserial_vex_v5_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_vex_v5
-
-//Value Computed by CMake
-rosserial_windows_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_windows
-
-//Value Computed by CMake
-rosserial_windows_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_windows
-
-//Value Computed by CMake
-rosserial_xbee_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/rosserial/rosserial_xbee
-
-//Value Computed by CMake
-rosserial_xbee_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/rosserial/rosserial_xbee
-
 //The directory containing a CMake configuration file for rostest.
 rostest_DIR:PATH=/opt/ros/noetic/share/rostest/cmake
 
@@ -911,27 +750,6 @@ rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
 
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
-
-//Value Computed by CMake
-sensor_msgs_ext_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/ros-sensor_msgs_ext
-
-//The directory containing a CMake configuration file for sensor_msgs_ext.
-sensor_msgs_ext_DIR:PATH=/home/gavlab/ros-hab-dcs/catkin_ws/devel/share/sensor_msgs_ext/cmake
-
-//Value Computed by CMake
-sensor_msgs_ext_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/ros-sensor_msgs_ext
-
-//Value Computed by CMake
-serial_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/serial
-
-//The directory containing a CMake configuration file for serial.
-serial_DIR:PATH=/home/gavlab/ros-hab-dcs/catkin_ws/devel/share/serial/cmake
-
-//Dependencies for the target
-serial_LIB_DEPENDS:STATIC=general;rt;general;pthread;
-
-//Value Computed by CMake
-serial_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/serial
 
 //The directory containing a CMake configuration file for smclib.
 smclib_DIR:PATH=/opt/ros/noetic/share/smclib/cmake
@@ -969,8 +787,8 @@ tf2_py_DIR:PATH=/opt/ros/noetic/share/tf2_py/cmake
 //The directory containing a CMake configuration file for tf2_ros.
 tf2_ros_DIR:PATH=/opt/ros/noetic/share/tf2_ros/cmake
 
-//The directory containing a CMake configuration file for topic_tools.
-topic_tools_DIR:PATH=/opt/ros/noetic/share/topic_tools/cmake
+//The directory containing a CMake configuration file for tf.
+tf_DIR:PATH=/opt/ros/noetic/share/tf/cmake
 
 //Value Computed by CMake
 usb_cam_BINARY_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/build/usb_cam
@@ -982,7 +800,7 @@ usb_cam_LIB_DEPENDS:STATIC=general;avcodec;general;swscale;general;/opt/ros/noet
 usb_cam_SOURCE_DIR:STATIC=/home/gavlab/ros-hab-dcs/catkin_ws/src/usb_cam
 
 //Path to a library.
-vchostif_LIBS:FILEPATH=/usr/lib/arm-linux-gnueabihf/libvchostif.a
+vchostif_LIBS:FILEPATH=/opt/vc/lib/libvchostif.a
 
 //Path to a library.
 vcos_LIBS:FILEPATH=/usr/lib/arm-linux-gnueabihf/libvcos.so
@@ -1140,7 +958,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=35
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=21
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1193,8 +1011,6 @@ FIND_PACKAGE_MESSAGE_DETAILS_PY_em:INTERNAL=[/usr/lib/python3/dist-packages/em.p
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.8.5()]
-//Details about finding PythonLibs
-FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/arm-linux-gnueabihf/libpython3.8.so][/usr/include/python3.8][v3.8.5()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 GMOCK_FROM_SOURCE_FOUND:INTERNAL=TRUE
@@ -1291,16 +1107,10 @@ PC_HB_harfbuzz_VERSION:INTERNAL=
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PYTHON_INCLUDE_DIR
-PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
 //  And it needs to match.  But setuptools won't tell us where
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python3/dist-packages
-//ADVANCED property for variable: PYTHON_LIBRARY
-PYTHON_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
-PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/home/gavlab/ros-hab-dcs/catkin_ws/install
 __pkg_config_arguments_GTK3:INTERNAL=REQUIRED;gtk+-3.0
@@ -1350,8 +1160,6 @@ avcodec_libavcodec_VERSION:INTERNAL=
 boost_atomic_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_headers_DIR
 boost_headers_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: boost_system_DIR
-boost_system_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_thread_DIR
 boost_thread_DIR-ADVANCED:INTERNAL=1
 generated_dir:INTERNAL=/home/gavlab/ros-hab-dcs/catkin_ws/build/gtest/googletest/generated

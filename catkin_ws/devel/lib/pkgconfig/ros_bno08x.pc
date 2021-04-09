@@ -1,8 +1,0 @@
-prefix=/home/gavlab/ros-hab-dcs/catkin_ws/devel
-
-Name: ros_bno08x
-Description: Description of ros_bno08x
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
