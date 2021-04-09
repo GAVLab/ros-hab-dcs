@@ -4,6 +4,5 @@
     <include file="sensors/ina219.launch" />
     <include file="sensors/pitemp.launch" />
     <include file="sensors/mpl3115a2.launch" />
-    <!-- <include file="sensors/bno055.launch" /> -->
-    <include file="sensors/icm20948.launch" />
+    <include file="sensors/arduino.launch" />
 </launch>
