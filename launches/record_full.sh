@@ -5,7 +5,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
 echo "Recording...."
-rosbag record -o ~/bagfiles/flight --split --duration=5m subset \
+rosbag record -o ~/bagfiles/flight --split --size=10000  subset \
 /rosout /rousout_agg \
 /down_cam/camera_info /down_cam/image/compressed /down_cam/parameter_descriptions \
 /hts221/humidity /hts221/temperature /lps22hb/pressure \
