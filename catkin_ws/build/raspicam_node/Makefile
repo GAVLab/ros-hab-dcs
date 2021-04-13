@@ -88,17 +88,16 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -124,16 +123,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -198,21 +198,6 @@ raspicam_node_gencfg/fast:
 .PHONY : raspicam_node_gencfg/fast
 
 # Convenience name for target.
-raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/rule:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/rule
-.PHONY : raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/rule
-
-# Convenience name for target.
-raspicam_node_generate_messages: raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/rule
-
-.PHONY : raspicam_node_generate_messages
-
-# fast build rule for target.
-raspicam_node_generate_messages/fast:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/build.make raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/build
-.PHONY : raspicam_node_generate_messages/fast
-
-# Convenience name for target.
 raspicam_node/CMakeFiles/raspicam_node_genpy.dir/rule:
 	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_genpy.dir/rule
 .PHONY : raspicam_node/CMakeFiles/raspicam_node_genpy.dir/rule
@@ -228,64 +213,19 @@ raspicam_node_genpy/fast:
 .PHONY : raspicam_node_genpy/fast
 
 # Convenience name for target.
-raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/rule:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/rule
-.PHONY : raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/rule
+raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/rule
+.PHONY : raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/rule
 
 # Convenience name for target.
-raspicam_node_generate_messages_cpp: raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/rule
+raspicam_node_gennodejs: raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/rule
 
-.PHONY : raspicam_node_generate_messages_cpp
+.PHONY : raspicam_node_gennodejs
 
 # fast build rule for target.
-raspicam_node_generate_messages_cpp/fast:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/build.make raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/build
-.PHONY : raspicam_node_generate_messages_cpp/fast
-
-# Convenience name for target.
-raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/rule:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/rule
-.PHONY : raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-raspicam_node_generate_messages_lisp: raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/rule
-
-.PHONY : raspicam_node_generate_messages_lisp
-
-# fast build rule for target.
-raspicam_node_generate_messages_lisp/fast:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/build.make raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/build
-.PHONY : raspicam_node_generate_messages_lisp/fast
-
-# Convenience name for target.
-raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/rule:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/rule
-.PHONY : raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/rule
-
-# Convenience name for target.
-_raspicam_node_generate_messages_check_deps_MotionVectors: raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/rule
-
-.PHONY : _raspicam_node_generate_messages_check_deps_MotionVectors
-
-# fast build rule for target.
-_raspicam_node_generate_messages_check_deps_MotionVectors/fast:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/build.make raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/build
-.PHONY : _raspicam_node_generate_messages_check_deps_MotionVectors/fast
-
-# Convenience name for target.
-raspicam_node/CMakeFiles/raspicam_node_geneus.dir/rule:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_geneus.dir/rule
-.PHONY : raspicam_node/CMakeFiles/raspicam_node_geneus.dir/rule
-
-# Convenience name for target.
-raspicam_node_geneus: raspicam_node/CMakeFiles/raspicam_node_geneus.dir/rule
-
-.PHONY : raspicam_node_geneus
-
-# fast build rule for target.
-raspicam_node_geneus/fast:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_geneus.dir/build.make raspicam_node/CMakeFiles/raspicam_node_geneus.dir/build
-.PHONY : raspicam_node_geneus/fast
+raspicam_node_gennodejs/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/build.make raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/build
+.PHONY : raspicam_node_gennodejs/fast
 
 # Convenience name for target.
 raspicam_node/CMakeFiles/raspicam_node_genlisp.dir/rule:
@@ -303,19 +243,94 @@ raspicam_node_genlisp/fast:
 .PHONY : raspicam_node_genlisp/fast
 
 # Convenience name for target.
-raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/rule:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/rule
-.PHONY : raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/rule
+raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
+.PHONY : raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-raspicam_node_gencpp: raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/rule
+diagnostic_msgs_generate_messages_eus: raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
 
-.PHONY : raspicam_node_gencpp
+.PHONY : diagnostic_msgs_generate_messages_eus
 
 # fast build rule for target.
-raspicam_node_gencpp/fast:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/build.make raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/build
-.PHONY : raspicam_node_gencpp/fast
+diagnostic_msgs_generate_messages_eus/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
+.PHONY : diagnostic_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
+.PHONY : raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+diagnostic_msgs_generate_messages_cpp: raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : diagnostic_msgs_generate_messages_cpp
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_cpp/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+.PHONY : raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+diagnostic_msgs_generate_messages_lisp: raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : diagnostic_msgs_generate_messages_lisp
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_lisp/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/rule
+.PHONY : raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/rule
+
+# Convenience name for target.
+raspicam_node_generate_messages: raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/rule
+
+.PHONY : raspicam_node_generate_messages
+
+# fast build rule for target.
+raspicam_node_generate_messages/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/build.make raspicam_node/CMakeFiles/raspicam_node_generate_messages.dir/build
+.PHONY : raspicam_node_generate_messages/fast
+
+# Convenience name for target.
+raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
+.PHONY : raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+diagnostic_msgs_generate_messages_nodejs: raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : diagnostic_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_nodejs/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
+.PHONY : diagnostic_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/rule
+.PHONY : raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+raspicam_node_generate_messages_cpp: raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/rule
+
+.PHONY : raspicam_node_generate_messages_cpp
+
+# fast build rule for target.
+raspicam_node_generate_messages_cpp/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/build.make raspicam_node/CMakeFiles/raspicam_node_generate_messages_cpp.dir/build
+.PHONY : raspicam_node_generate_messages_cpp/fast
 
 # Convenience name for target.
 raspicam_node/CMakeFiles/raspicam_node_generate_messages_nodejs.dir/rule:
@@ -333,19 +348,49 @@ raspicam_node_generate_messages_nodejs/fast:
 .PHONY : raspicam_node_generate_messages_nodejs/fast
 
 # Convenience name for target.
-raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/rule:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/rule
-.PHONY : raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/rule
+raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/rule
+.PHONY : raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/rule
 
 # Convenience name for target.
-raspicam_node_gennodejs: raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/rule
+raspicam_node_gencpp: raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/rule
 
-.PHONY : raspicam_node_gennodejs
+.PHONY : raspicam_node_gencpp
 
 # fast build rule for target.
-raspicam_node_gennodejs/fast:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/build.make raspicam_node/CMakeFiles/raspicam_node_gennodejs.dir/build
-.PHONY : raspicam_node_gennodejs/fast
+raspicam_node_gencpp/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/build.make raspicam_node/CMakeFiles/raspicam_node_gencpp.dir/build
+.PHONY : raspicam_node_gencpp/fast
+
+# Convenience name for target.
+raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/rule
+.PHONY : raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+raspicam_node_generate_messages_lisp: raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/rule
+
+.PHONY : raspicam_node_generate_messages_lisp
+
+# fast build rule for target.
+raspicam_node_generate_messages_lisp/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/build.make raspicam_node/CMakeFiles/raspicam_node_generate_messages_lisp.dir/build
+.PHONY : raspicam_node_generate_messages_lisp/fast
+
+# Convenience name for target.
+raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/rule
+.PHONY : raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/rule
+
+# Convenience name for target.
+raspicam_node_generate_messages_py: raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/rule
+
+.PHONY : raspicam_node_generate_messages_py
+
+# fast build rule for target.
+raspicam_node_generate_messages_py/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/build.make raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/build
+.PHONY : raspicam_node_generate_messages_py/fast
 
 # Convenience name for target.
 raspicam_node/CMakeFiles/compressed_image_transport_gencfg.dir/rule:
@@ -378,19 +423,49 @@ raspicam_node_generate_messages_eus/fast:
 .PHONY : raspicam_node_generate_messages_eus/fast
 
 # Convenience name for target.
-raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/rule:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/rule
-.PHONY : raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/rule
+raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
+.PHONY : raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-raspicam_node_generate_messages_py: raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/rule
+diagnostic_msgs_generate_messages_py: raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
 
-.PHONY : raspicam_node_generate_messages_py
+.PHONY : diagnostic_msgs_generate_messages_py
 
 # fast build rule for target.
-raspicam_node_generate_messages_py/fast:
-	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/build.make raspicam_node/CMakeFiles/raspicam_node_generate_messages_py.dir/build
-.PHONY : raspicam_node_generate_messages_py/fast
+diagnostic_msgs_generate_messages_py/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make raspicam_node/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
+.PHONY : diagnostic_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/rule
+.PHONY : raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/rule
+
+# Convenience name for target.
+_raspicam_node_generate_messages_check_deps_MotionVectors: raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/rule
+
+.PHONY : _raspicam_node_generate_messages_check_deps_MotionVectors
+
+# fast build rule for target.
+_raspicam_node_generate_messages_check_deps_MotionVectors/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/build.make raspicam_node/CMakeFiles/_raspicam_node_generate_messages_check_deps_MotionVectors.dir/build
+.PHONY : _raspicam_node_generate_messages_check_deps_MotionVectors/fast
+
+# Convenience name for target.
+raspicam_node/CMakeFiles/raspicam_node_geneus.dir/rule:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 raspicam_node/CMakeFiles/raspicam_node_geneus.dir/rule
+.PHONY : raspicam_node/CMakeFiles/raspicam_node_geneus.dir/rule
+
+# Convenience name for target.
+raspicam_node_geneus: raspicam_node/CMakeFiles/raspicam_node_geneus.dir/rule
+
+.PHONY : raspicam_node_geneus
+
+# fast build rule for target.
+raspicam_node_geneus/fast:
+	cd /home/gavlab/ros-hab-dcs/catkin_ws/build && $(MAKE) -f raspicam_node/CMakeFiles/raspicam_node_geneus.dir/build.make raspicam_node/CMakeFiles/raspicam_node_geneus.dir/build
+.PHONY : raspicam_node_geneus/fast
 
 src/RaspiCamControl.o: src/RaspiCamControl.cpp.o
 
@@ -457,23 +532,28 @@ help:
 	@echo "... test"
 	@echo "... raspicam_node"
 	@echo "... raspicam_node_gencfg"
-	@echo "... raspicam_node_generate_messages"
 	@echo "... raspicam_node_genpy"
-	@echo "... install/strip"
-	@echo "... raspicam_node_generate_messages_cpp"
-	@echo "... raspicam_node_generate_messages_lisp"
-	@echo "... _raspicam_node_generate_messages_check_deps_MotionVectors"
-	@echo "... raspicam_node_geneus"
+	@echo "... rebuild_cache"
+	@echo "... raspicam_node_gennodejs"
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... raspicam_node_genlisp"
-	@echo "... raspicam_node_gencpp"
+	@echo "... diagnostic_msgs_generate_messages_eus"
+	@echo "... diagnostic_msgs_generate_messages_cpp"
+	@echo "... diagnostic_msgs_generate_messages_lisp"
+	@echo "... raspicam_node_generate_messages"
+	@echo "... diagnostic_msgs_generate_messages_nodejs"
+	@echo "... install/strip"
+	@echo "... raspicam_node_generate_messages_cpp"
 	@echo "... raspicam_node_generate_messages_nodejs"
-	@echo "... rebuild_cache"
-	@echo "... raspicam_node_gennodejs"
+	@echo "... raspicam_node_gencpp"
+	@echo "... raspicam_node_generate_messages_lisp"
+	@echo "... raspicam_node_generate_messages_py"
 	@echo "... compressed_image_transport_gencfg"
 	@echo "... raspicam_node_generate_messages_eus"
-	@echo "... raspicam_node_generate_messages_py"
+	@echo "... diagnostic_msgs_generate_messages_py"
+	@echo "... _raspicam_node_generate_messages_check_deps_MotionVectors"
+	@echo "... raspicam_node_geneus"
 	@echo "... src/RaspiCamControl.o"
 	@echo "... src/RaspiCamControl.i"
 	@echo "... src/RaspiCamControl.s"

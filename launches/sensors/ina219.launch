@@ -1,0 +1,6 @@
+<launch>
+    <node name="ina219" pkg="power_ina219" type="ina219_node" respawn="true" respawn_delay="2">
+        <remap from="/voltage" to="/ina219/voltage"/>
+        <remap from="/current" to="/ina219/current"/>
+    </node>
+</launch>

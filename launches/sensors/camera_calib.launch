@@ -1,0 +1,12 @@
+<launch>
+  
+  <node name="down_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="2592" />
+    <param name="image_height" value="1944" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="camera_frame_id" value="down_cam" />
+    <param name="io_method" value="mmap"/>
+  </node>
+
+</launch>
