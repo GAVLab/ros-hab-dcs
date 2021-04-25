@@ -1,8 +1,0 @@
-prefix=/home/gavlab/ros-hab-dcs/catkin_ws/devel
-
-Name: imu_tf
-Description: Description of imu_tf
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

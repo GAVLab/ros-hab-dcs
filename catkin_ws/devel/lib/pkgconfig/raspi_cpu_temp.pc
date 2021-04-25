@@ -1,8 +1,0 @@
-prefix=/home/gavlab/ros-hab-dcs/catkin_ws/devel
-
-Name: raspi_cpu_temp
-Description: Description of raspi_cpu_temp
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
