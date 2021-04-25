@@ -30,5 +30,5 @@ Please see the installation guide for how to setup the software packages and run
 * SN02
 
      <img src="documentation/Flight_2/Photos/exterior.JPG" height="350"></img>
-     <img src="documentation/Flight_2/Photos/interior.JPG" height="350"></img>
+     <img src="documentation/Flight_2/Photos/interior.jpg" height="350"></img>
      <img src="diagrams/sn02_system_diagram.png" width="500" />
