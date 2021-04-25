@@ -1,8 +1,0 @@
-prefix=/home/gavlab/ros-hab-dcs/catkin_ws/devel
-
-Name: ros_icm20948
-Description: Description of ros_icm20948
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

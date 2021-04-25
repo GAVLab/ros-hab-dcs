@@ -31,3 +31,6 @@
 [submodule "catkin_ws/src/ros-power-ina219"]
 	path = catkin_ws/src/ros-power-ina219
 	url = https://github.com/dheera/ros-power-ina219
+[submodule "ros_arduino_budget_ins"]
+	path = ros_arduino_budget_ins
+	url = https://github.com/GAVLab/ros_arduino_budget_ins

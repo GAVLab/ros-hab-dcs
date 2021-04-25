@@ -1,8 +1,0 @@
-prefix=/home/gavlab/ros-hab-dcs/catkin_ws/install
-
-Name: power_ina219
-Description: Description of power_ina219
-Version: 1.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: 
